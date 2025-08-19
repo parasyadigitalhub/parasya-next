@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
     margin-top: 3rem;
     flex-wrap: wrap;
 }
@@ -10,74 +10,68 @@
 .social a {
     width: 40px;
     height: 40px;
-    background: #fff;
-    text-align: center;
-    line-height: 60px;
-    font-size: 20px;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    border: 3px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
-    transition: transform 0.3s ease;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
 
 .social a svg {
-    color: #262626;
-    transition: 0.5s;
-    z-index: 3;
-    position: relative;
-}
-
-.social a:hover svg {
     color: #fff;
-    transform: rotateY(360deg);
+    font-size: 22px;
+    z-index: 2;
+    transition: transform 0.5s ease, color 0.3s ease;
 }
 
 .social a::before {
     content: "";
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
-    z-index: 2;
+    inset: 0;
+    background: transparent;
+    z-index: 1;
+    transition: background 0.4s ease;
+    border-radius: 50%;
 }
 
-.social a:hover::before {
-    top: 0;
-}
-
-.social a:nth-child(1)::before {
+.social a:nth-child(1):hover::before {
     background: #000;
-    /* Twitter/X */
 }
 
-.social a:nth-child(2)::before {
+/* Twitter/X */
+.social a:nth-child(2):hover::before {
     background: #E1306C;
-    /* Instagram */
 }
 
-.social a:nth-child(3)::before {
+/* Instagram */
+.social a:nth-child(3):hover::before {
     background: #0077b5;
-    /* LinkedIn */
 }
 
-.social a:nth-child(4)::before {
+/* LinkedIn */
+.social a:nth-child(4):hover::before {
     background: #3b5999;
-    /* Facebook */
 }
 
-.social a:nth-child(5)::before {
+/* Facebook */
+.social a:nth-child(5):hover::before {
     background: #25D366;
-    /* WhatsApp */
 }
 
-.social a:nth-child(6)::before {
+/* WhatsApp */
+.social a:nth-child(6):hover::before {
     background: #ff0000;
-    /* YouTube */
+}
+
+/* YouTube */
+
+.social a:hover svg {
+    transform: rotateY(360deg) scale(1.1);
+}
+
+.social a:hover {
+    border-color: transparent;
+    transform: translateY(-4px);
 }
