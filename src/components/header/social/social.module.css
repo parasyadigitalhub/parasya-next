@@ -1,0 +1,83 @@
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.social a {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.social a svg {
+    color: #262626;
+    transition: 0.5s;
+    z-index: 3;
+    position: relative;
+}
+
+.social a:hover svg {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+.social a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.social a:hover::before {
+    top: 0;
+}
+
+.social a:nth-child(1)::before {
+    background: #000;
+    /* Twitter/X */
+}
+
+.social a:nth-child(2)::before {
+    background: #E1306C;
+    /* Instagram */
+}
+
+.social a:nth-child(3)::before {
+    background: #0077b5;
+    /* LinkedIn */
+}
+
+.social a:nth-child(4)::before {
+    background: #3b5999;
+    /* Facebook */
+}
+
+.social a:nth-child(5)::before {
+    background: #25D366;
+    /* WhatsApp */
+}
+
+.social a:nth-child(6)::before {
+    background: #ff0000;
+    /* YouTube */
+}
