@@ -1,5 +1,6 @@
 import Header from "@/components/header/header";
 import "./globals.css";
+import Footer from "@/components/footer/footer";
 
 export const metadata = {
   title: "Parasya",
@@ -19,7 +20,7 @@ export default function RootLayout({
           <Header />
           {/* <Breadcrumb /> */}
           <main>{children}</main>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </body>
     </html>
