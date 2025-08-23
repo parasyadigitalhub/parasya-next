@@ -1,10 +1,11 @@
-import Planet from "./home/planet/page";
+import Carousel from "./home/carousel/page";
+import HeroSection from "./home/planet/page";
 
 export default function HomePage() {
     return (
         <main>
-            <Planet/>
+            <HeroSection />
+            <Carousel autoplayDelay={2000} />
         </main>
     );
 }
-    
