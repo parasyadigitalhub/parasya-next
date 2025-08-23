@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./carousel.module.css";
+import Mobile from "./mobile/page";
 
 type CarouselProps = {
     autoplayDelay?: number;
@@ -95,23 +96,7 @@ export default function Carousel({ autoplayDelay = 2000 }: CarouselProps) {
                     </button>
                 </div>
             ) : (
-                <div id="carouselMobile" className={styles.carouselMobile}>
-                    <div className="carousel-inner">
-                        {images.map((src, i) => (
-                            <div key={i} className={`carousel-item ${i === 0 ? "active" : ""}`}>
-                                <img src={src} alt={`Mobile carousel ${i + 1}`} className="d-block w-100" />
-                            </div>
-                        ))}
-                    </div>
-                    <button className="carousel-control-prev" type="button" onClick={prev}>
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" onClick={next}>
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
-                </div>
+                <Mobile/>
             )}
         </div>
     );

@@ -1,0 +1,63 @@
+.imageFlow {
+    overflow: hidden;
+    background: #000;
+    padding: 2rem 0;
+}
+
+.carouselRow {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: 450px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.carouselTrack {
+    display: flex;
+    cursor: grab;
+    will-change: transform;
+}
+
+.carouselTrack img {
+    height: 420px;
+    width: 350px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 20px;
+    pointer-events: none;
+    user-select: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+.teamImage:hover img {
+    transform: scale(1.08);
+}
+
+.teamImage {
+    position: relative;
+    display: inline-block;
+    margin-right: 24px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #1c1c1e, #2a2a2d);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45),
+        0 4px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.teamImage:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 768px) {
+    .carouselTrack img {
+        width: 300px;
+    }
+
+    .teamImage img {
+        height: 250px;
+    }
+}
