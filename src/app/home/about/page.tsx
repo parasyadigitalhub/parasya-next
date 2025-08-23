@@ -28,11 +28,11 @@ export default function About() {
     };
 
     return (
-        <div className={`${styles.about} scroll-animate`}>
+        <div className={`${styles.about}`}>
             <div className={styles.text}>
                 <div className={styles.heading}>
                     <h3>
-                        About <span className="text-danger">Parasya</span>
+                        About <span className={styles.red}>Parasya</span>
                     </h3>
                 </div>
                 <div className={styles.content}>
