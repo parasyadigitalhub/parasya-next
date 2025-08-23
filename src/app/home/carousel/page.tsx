@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./carousel.module.css";
 import Mobile from "./mobile/page";
+import { BsArrowLeft } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
 
 type CarouselProps = {
     autoplayDelay?: number;
@@ -89,10 +91,10 @@ export default function Carousel({ autoplayDelay = 2000 }: CarouselProps) {
                     </div>
 
                     <button className={`${styles.carouselNav} ${styles.prevBtn}`} onClick={prev}>
-                        ◀
+                        <BsArrowLeft />
                     </button>
                     <button className={`${styles.carouselNav} ${styles.nextBtn}`} onClick={next}>
-                        ▶
+                        <BsArrowRight />
                     </button>
                 </div>
             ) : (
