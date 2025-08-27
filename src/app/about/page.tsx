@@ -1,4 +1,5 @@
 import HomeMission from "../home/mission/page";
+import Process from "./process/page";
 import Welcome from "./welcome/page";
 
 export default function AboutPage() {
@@ -6,6 +7,7 @@ export default function AboutPage() {
         <>
         <Welcome/>
         <HomeMission/>
+        <Process/>
         </>
     )
 }
