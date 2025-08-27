@@ -1,0 +1,54 @@
+.imageFlow {
+    overflow: hidden;
+    background: black;
+}
+
+.carouselRow {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.carouselTrack {
+    display: flex;
+    animation: scroll-left 80s linear infinite;
+}
+
+.carouselTrack.reverse {
+    animation: scroll-right 80s linear infinite;
+}
+
+.carouselTrack img {
+    height: 180px;
+    width: 180px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    border-radius: 10px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
