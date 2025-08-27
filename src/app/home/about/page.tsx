@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./about.module.css";
 import { BsFillVolumeMuteFill } from "react-icons/bs";
+import { BsFillVolumeUpFill } from "react-icons/bs";
 
 export default function About() {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -65,7 +66,11 @@ export default function About() {
                 ></video>
 
                 <button className={styles.muteBtn} onClick={toggleMute}>
-                    <i className={isMuted ? "bi bi-volume-mute-fill" : "bi bi-volume-up-fill"}></i>
+                    {isMuted ? (
+                        <BsFillVolumeMuteFill size={22} />
+                    ) : (
+                        <BsFillVolumeUpFill size={22} />
+                    )}
                 </button>
             </div>
         </div>
