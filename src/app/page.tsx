@@ -1,6 +1,7 @@
 import HomeAbout from "./home/about/page";
 import Carousel from "./home/carousel/page";
 import HomeMission from "./home/mission/page";
+import Partner from "./home/partner/page";
 import HeroSection from "./home/planet/page";
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
             <Carousel autoplayDelay={2000} />
             <HomeAbout/>
             <HomeMission/>
+            <Partner/>
         </main>
     );
 }
