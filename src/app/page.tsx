@@ -6,6 +6,7 @@ import ImageFlow from "./home/imageflow/page";
 import HomeMission from "./home/mission/page";
 import Partner from "./home/partner/page";
 import HeroSection from "./home/planet/page";
+import Testimonials from "./home/testimonials/page";
 
 export default function HomePage() {
     return (
@@ -18,6 +19,7 @@ export default function HomePage() {
             <ImageFlow/>
             <HomeBlogs/>
             <HomeServices/>
+            <Testimonials/>
         </main>
     );
 }

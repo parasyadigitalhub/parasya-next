@@ -1,0 +1,154 @@
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: black;
+    gap: 40px;
+}
+
+.text {
+    max-width: 900px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.heading h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.testimonialCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 2rem;
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 360px;
+    min-width: 280px;
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.35);
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.head img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.head h5 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.test p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e4e4e4;
+    margin: 0;
+}
+
+.red {
+    color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 calc(50% - 40px);
+        padding: 1.5rem;
+    }
+
+    .heading h3 {
+        font-size: 2.2rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .heading h3 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+        padding: 1rem;
+    }
+
+    .testimonials {
+        padding: 40px 15px;
+        gap: 30px;
+    }
+
+    .heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .testimonialCards {
+        gap: 20px;
+    }
+
+    .head img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .head h5 {
+        font-size: 1rem;
+    }
+
+    .test p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
