@@ -3,6 +3,7 @@ import Carousel from "./home/carousel/page";
 import HomeBlogs from "./home/homeblogs/page";
 import HomeServices from "./home/homeservices/page";
 import ImageFlow from "./home/imageflow/page";
+import LogoGrid from "./home/logogrid/page";
 import HomeMission from "./home/mission/page";
 import Partner from "./home/partner/page";
 import HeroSection from "./home/planet/page";
@@ -20,6 +21,7 @@ export default function HomePage() {
             <HomeBlogs/>
             <HomeServices/>
             <Testimonials/>
+            <LogoGrid/>
         </main>
     );
 }
