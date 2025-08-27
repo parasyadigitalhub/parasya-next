@@ -1,0 +1,174 @@
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: black;
+    gap: 40px;
+}
+
+.services .text {
+    max-width: 900px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.services .heading h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.services .content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.services .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.services .card {
+    background-color: black;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding:3rem;
+    flex: 1 1 calc(33.333% - 40px);
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.35);
+}
+
+.cardTitle {
+    color: #dc2626;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.cardSubtitle {
+    text-align: left;
+    font-weight: 600;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cardText,
+.services .card p {
+    font-size: 1.05rem;
+    color: #e4e4e4;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    text-align: left;
+}
+
+.checkIcon {
+    color: #dc2626;
+    margin-right: 10px;
+}
+
+.services .button button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.red {
+  color: #dc3545;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e63946;
+}
+
+/* Responsive fixes */
+@media (max-width: 991px) {
+    .services .heading h3 {
+        font-size: 2.3rem;
+    }
+
+    .services .content p {
+        font-size: 1.05rem;
+    }
+
+    .services .card {
+        flex: 1 1 calc(50% - 40px);
+        padding: 1.5rem;
+    }
+
+    .cardSubtitle {
+        font-size: 1.6rem;
+    }
+
+    .cardText,
+    .services .card p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services {
+        padding: 40px 15px;
+        gap: 30px;
+    }
+
+    .services .heading h3 {
+        font-size: 1.9rem;
+    }
+
+    .services .content p {
+        font-size: 1rem;
+    }
+
+    .services .cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .services .card {
+        flex: 1 1 100%;
+        padding: 1.2rem;
+    }
+
+    .cardSubtitle {
+        font-size: 1.4rem;
+    }
+
+    .cardText,
+    .services .card p {
+        font-size: 0.95rem;
+    }
+
+    .services .button button {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+    }
+}
