@@ -1,5 +1,6 @@
 import HomeAbout from "./home/about/page";
 import Carousel from "./home/carousel/page";
+import HomeBlogs from "./home/homeblogs/page";
 import ImageFlow from "./home/imageflow/page";
 import HomeMission from "./home/mission/page";
 import Partner from "./home/partner/page";
@@ -14,6 +15,7 @@ export default function HomePage() {
             <HomeMission/>
             <Partner/>
             <ImageFlow/>
+            <HomeBlogs/>
         </main>
     );
 }
