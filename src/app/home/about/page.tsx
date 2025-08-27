@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./about.module.css";
+import { BsFillVolumeMuteFill } from "react-icons/bs";
 
 export default function About() {
     const videoRef = useRef<HTMLVideoElement>(null);
