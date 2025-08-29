@@ -68,7 +68,12 @@
 }
 
 .red {
-    color: #dc3545;
+    background: linear-gradient(90deg, #ff4d6d, #dc3545, #b3002d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 /* Responsive */

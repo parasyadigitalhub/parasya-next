@@ -45,11 +45,7 @@ export default function About() {
                         potential with our digital marketing expertise.
                     </p>
                     <Link href="/about">
-                        <button
-                            className="magnetic-btn"
-                            onMouseMove={onButtonHover}
-                            onMouseLeave={resetButtonHover}
-                        >
+                        <button>
                             Learn More
                         </button>
                     </Link>
