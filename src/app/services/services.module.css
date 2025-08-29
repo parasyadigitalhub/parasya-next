@@ -1,0 +1,103 @@
+.container-fluid {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+}
+
+.heading h1 {
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+    font-size: 55px;
+    color: red;
+    /* keep red or change to rgba if needed */
+}
+
+.details>div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.name {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 2rem;
+}
+
+.name h1 {
+    margin-bottom: 1rem;
+}
+
+.name p {
+    color: #ccc;
+}
+
+/* Accordion styles */
+.accordian {
+    flex: 2;
+    min-width: 300px;
+}
+
+.accordionItem {
+    background-color: #242424;
+    border: none;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordionButton {
+    width: 100%;
+    background-color: #242424;
+    color: white;
+    font-weight: 500;
+    padding: 1rem;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordionButton:hover {
+    background-color: #3a3a3a;
+}
+
+.accordionButton:focus {
+    outline: 2px solid #555;
+}
+
+.accordionButton.active {
+    background-color: #333;
+    font-size: 20px;
+}
+
+.accordionBody {
+    background-color: #242424;
+    color: #ccc;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 1rem;
+}
+
+.accordionBody.show {
+    max-height: 400px;
+    /* enough space for text */
+    padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0.5rem;
+    }
+
+    .heading h1 {
+        font-size: 40px;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+}
