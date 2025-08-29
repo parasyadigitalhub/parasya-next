@@ -1,6 +1,5 @@
-import Header from "@/components/header/header";
 import "./globals.css";
-import Footer from "@/components/footer/footer";
+import ClientLayout from "./ClientLayout";
 
 export const metadata = {
   title: "Parasya",
@@ -12,16 +11,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body>
-        {/* Animation logic can go here if needed */}
-        <div className="app-layout">
-          <Header />
-          {/* <Breadcrumb /> */}
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
