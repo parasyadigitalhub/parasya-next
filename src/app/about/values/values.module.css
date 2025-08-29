@@ -22,6 +22,14 @@
     -webkit-text-fill-color: transparent;
 }
 
+.red {
+    background: linear-gradient(90deg, #ff4d6d, #dc3545, #b3002d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -90,6 +98,10 @@
 }
 
 @media (max-width: 768px) {
+        .headings h1 {
+        font-size: 2.2rem;
+    }
+
     .values {
         padding: 4rem 1.5rem;
     }
