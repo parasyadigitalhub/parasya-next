@@ -32,7 +32,7 @@ export default function Header() {
 
             <div className={`${styles.sideMenu} ${isMenuOpen ? styles.open : ""}`}>
                 <ul>
-                    <li onClick={closeMenu}><Link href="/home">Home</Link></li>
+                    <li onClick={closeMenu}><Link href="/">Home</Link></li>
                     <li onClick={closeMenu}><Link href="/about">About</Link></li>
                     <li onClick={closeMenu}><Link href="/services">Services</Link></li>
                     <li onClick={closeMenu}><Link href="/careers">Careers</Link></li>
