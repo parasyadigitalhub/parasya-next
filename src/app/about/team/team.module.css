@@ -171,7 +171,27 @@
     line-height: 1.3;
 }
 
+@media (max-width: 992px) {
+
+    .headings {
+        font-size: 18px;
+    }
+
+    .headings p {
+        padding: 0 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+
+    .headings {
+        font-size: 16px;
+    }
+
+    .headings p {
+        padding: 0 1rem;
+    }
+
     .teamOverlay {
         transform: translateY(0);
         padding: 6px 10px;
@@ -193,5 +213,15 @@
 
     .teamImage img {
         height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .headings {
+        font-size: 15px;
+    }
+
+    .headings p {
+        padding: 0 0.8rem;
     }
 }
