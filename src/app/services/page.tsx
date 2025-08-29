@@ -181,7 +181,7 @@ export default function Services() {
     ];
 
     return (
-        <div className={`container-fluid ${styles.containerFluid}`}>
+        <div className={styles.containerFluid}>
             <div className={styles.heading}>
                 <h1>Services</h1>
             </div>

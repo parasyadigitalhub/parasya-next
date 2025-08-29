@@ -2,10 +2,12 @@
     background-color: black;
     color: white;
     padding: 2rem;
+    
 }
 
 .heading h1 {
     margin-bottom: 3rem;
+    margin-top: 3rem;
     margin-left: 3rem;
     font-size: 55px;
     color: red;
