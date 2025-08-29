@@ -1,0 +1,147 @@
+.journey h1 {
+    text-align: center;
+    margin: 3rem auto 1rem auto;
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    display: block;
+}
+
+.timeline {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.timelineYears {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 4rem;
+    font-weight: bold;
+}
+
+.timelineLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin: 1rem 4rem;
+}
+
+.yearBtn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #dc3545;
+    background-color: black;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.yearBtn:hover {
+    background-color: #dc3545;
+    box-shadow: 0 0 10px #dc3545;
+}
+
+.yearBtn.active {
+    background-color: #dc3545;
+    transform: scale(1.2);
+}
+
+.lineBar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 4px;
+    background-color: #dc3545;
+    z-index: 1;
+    margin: auto;
+}
+
+.timelineImages {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.imageContainer {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+    opacity: 0.4;
+    transform: scale(0.9);
+}
+
+.imageContainer.active {
+    opacity: 1;
+    transform: scale(1.4);
+    z-index: 10;
+}
+
+.infoBoard {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: black;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 16px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 50px;
+}
+
+.infoBoard.expanded {
+    top: 0;
+    height: 100%;
+    border-radius: 16px;
+    justify-content: center;
+    text-align: center;
+}
+
+.infoBoard h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.infoBoard p {
+    font-size: 0.7rem;
+    margin: 0.5rem 0 0;
+}
+
+.toggleBtn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.toggleBtn:hover {
+    color: #dc3545;
+}
+
+@media (max-width: 768px) {
+    .journey {
+        display: none;
+    }
+}
