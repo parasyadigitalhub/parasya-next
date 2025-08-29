@@ -89,15 +89,17 @@ export default function Blogs() {
             {/* Modal */}
             {selectedPost && (
                 <div className={styles.modalOverlay} onClick={handleClose}>
-                    <div
-                        className={styles.modalContent}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <button className={styles.closeBtn} onClick={handleClose}>
-                            ✖
-                        </button>
-                        <h2>{selectedPost.title}</h2>
-                        <small>{selectedPost.date}</small>
+                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+
+                        {/* Sticky Header */}
+                        <div className={styles.modalHeader}>
+                            <h2>{selectedPost.title}</h2>
+                            <small>{selectedPost.date}</small>
+                            <button className={styles.closeBtn} onClick={handleClose}>
+                                ✖
+                            </button>
+                        </div>
+
                         <img
                             src={selectedPost.image}
                             alt={selectedPost.title}
@@ -105,6 +107,7 @@ export default function Blogs() {
                         />
                         <p>{selectedPost.fullContent}</p>
                     </div>
+
                 </div>
             )}
         </div>
