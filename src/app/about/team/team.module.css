@@ -79,7 +79,7 @@
     inset: 0;
     border-radius: 20px;
     padding: 2px;
-    background: linear-gradient(135deg, #ff3b3b, #ff6f61, #ff3b3b);
+    border: 2px solid transparent;
     background-size: 300% 300%;
     animation: glow 6s linear infinite;
 
@@ -96,6 +96,7 @@
 }
 
 .teamImage:hover::before {
+    border-color: #ff3b3b;
     opacity: 1;
 }
 
@@ -110,7 +111,7 @@
     left: 0;
     right: 0;
     padding: 16px 20px;
-    background: rgba(24, 24, 27, 0.55);
+    background: rgba(24, 24, 27, 0.25);
     backdrop-filter: blur(18px) saturate(180%);
     -webkit-backdrop-filter: blur(18px) saturate(180%);
     color: #fff;
@@ -142,19 +143,25 @@
 }
 
 .teamOverlay a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
     color: #fff;
     font-size: 22px;
     margin-left: 14px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     transition: all 0.35s ease;
+    background: transparent;
 }
 
 .teamOverlay a:hover {
+    border-color: #0a66c2;
     color: #0a66c2;
-    background: rgba(255, 255, 255, 0.2);
     transform: scale(1.2) rotate(8deg);
+    background: transparent;
 }
 
 .teamInfo {
