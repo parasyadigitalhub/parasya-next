@@ -1,64 +1,91 @@
 .headings {
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 20px;
-    font-weight: 350;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+.headings h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #fff, #bbb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .headings p {
     max-width: 900px;
-    margin: 2rem auto 1rem auto;
-    padding: 0 2rem;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #e4e4e4;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
 }
 
 .img {
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 0;
 }
 
 .img img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .red {
-    color: #dc3545;
-    /* replaces Bootstrap text-danger */
+    background: linear-gradient(90deg, #ff4d6d, #dc3545, #b3002d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 /* ✅ Responsive */
 @media (max-width: 992px) {
-    .headings {
-        font-size: 18px;
+    .headings h1 {
+        font-size: 2.5rem;
     }
 
     .headings p {
-        padding: 0 1.5rem;
+        font-size: 1.05rem;
+        padding: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .headings {
-        font-size: 16px;
+    .headings h1 {
+        font-size: 2rem;
     }
 
     .headings p {
-        padding: 0 1rem;
+        font-size: 1rem;
+        padding: 1.2rem;
     }
 
     .img img {
-        height: 180px;
+        height: 220px;
     }
 }
 
 @media (max-width: 576px) {
-    .headings {
-        font-size: 15px;
+    .headings h1 {
+        font-size: 1.8rem;
     }
 
     .headings p {
-        padding: 0 0.8rem;
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    .img img {
+        height: 180px;
     }
 }

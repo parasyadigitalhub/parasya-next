@@ -40,7 +40,7 @@ export default function Process() {
                 {steps.map((step, i) => (
                     <div className={styles.card} key={i}>
                         <div className={styles.card_body}>
-                            <h5 className={styles.num}>{step.num}</h5>
+                            <div className={styles.num}>{step.num}</div>
                             <h5 className={styles.title}>{step.title}</h5>
                             <p className={styles.text}>{step.text}</p>
                         </div>
