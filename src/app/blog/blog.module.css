@@ -286,6 +286,10 @@
         grid-template-columns: 1fr;
     }
 
+    .card {
+        height: 550px;
+    }
+
     .cardBody h5 {
         font-size: 1.3rem;
     }
