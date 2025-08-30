@@ -172,10 +172,20 @@
     color: #fff;
     background: linear-gradient(90deg, #ff4d6d, #dc3545, #b3002d);
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
 .submitButton:hover {
-    filter: brightness(1.1);
+    transform: scale(1.03);
+    box-shadow: 0 0 18px rgba(220, 53, 69, 0.6);
+    background: linear-gradient(90deg, #ff5c7a, #e03b4f, #c7002f);
+}
+
+.submitButton:active {
+    transform: scale(0.98);
 }
 
 .error {
