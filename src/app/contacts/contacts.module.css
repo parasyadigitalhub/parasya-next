@@ -1,51 +1,63 @@
 .containerFluid {
-    background-color: black;
     color: white;
-    padding: 2rem;
+    padding: 1rem 2rem;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .heading {
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 20px;
-    font-weight: 350;
+    margin-bottom: 3rem;
 }
 
 .getInTouch h1 {
-    color: white;
+    font-size: 3rem;
+    font-weight: 600;
 }
 
-.getInTouch .highlight {
-    color: red;
-    /* replaces Bootstrap text-danger */
+.highlight {
+    background: linear-gradient(90deg, #ff4d6d, #dc3545, #b3002d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
 }
 
 .para p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #ccc;
+    margin-top: 0.75rem;
+    font-size: 1.1rem;
+    color: #aaa;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Card Layout */
 .cards {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .card {
-    background-color: #242424;
-    border-radius: 10px;
-    padding: 1.5rem;
+    background: rgba(36, 36, 36, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
     color: white;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 12px 28px rgba(255, 0, 60, 0.2);
 }
 
 .cardBody {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .one,
@@ -62,7 +74,7 @@
 
 .three {
     flex: 2;
-    min-width: 300px;
+    min-width: 350px;
 }
 
 /* Contact Info */
@@ -71,58 +83,74 @@
 .location {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 .phone svg,
 .email svg,
 .location svg {
     font-size: 1.5rem;
-    color: red;
-    background-color: #fa00001d;
-    border-radius: 6px;
+    color: #ff4d6d;
+    background: rgba(255, 77, 109, 0.15);
+    border-radius: 12px;
     padding: 1rem;
-    width: 3rem;
-    height: 3rem;
+    width: 3.2rem;
+    height: 3.2rem;
 }
 
 .phone a,
 .email a {
     text-decoration: none;
-    color: white;
+    color: #f5f5f5;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.phone a:hover,
+.email a:hover {
+    color: #ff4d6d;
 }
 
 /* Form */
 .formGroup {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .formGroup label {
-    margin-bottom: 0.4rem;
-    font-weight: 300;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    color: #ddd;
 }
 
 .inputField,
 .textArea {
     width: 100%;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #474646;
+    padding: 0.85rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: #2b2b2b;
     color: white;
     font-size: 1rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputField:focus,
+.textArea:focus {
+    border: 1px solid #ff4d6d;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 77, 109, 0.4);
 }
 
 .inputField::placeholder,
 .textArea::placeholder {
-    color: #ccc;
+    color: #888;
 }
 
 .nameRow {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     width: 100%;
 }
 
@@ -133,74 +161,61 @@
 /* Button */
 .submitBtn {
     width: 100%;
-    padding: 0.75rem;
-    background-color: red;
+    padding: 0.9rem;
+    background: linear-gradient(90deg, #ff4d6d, #dc3545);
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .submitBtn:hover {
-    background-color: darkred;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(255, 0, 60, 0.3);
+    background: linear-gradient(90deg, #dc3545, #b30029);
 }
 
 .submitBtn:disabled {
-    background-color: gray;
+    background: #555;
     cursor: not-allowed;
+    box-shadow: none;
 }
 
 /* Errors */
 .error {
     color: #ff6b6b;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     margin-top: 0.25rem;
 }
 
 /* Loader */
 .loader {
-    width: 24px;
+    width: 22px;
     aspect-ratio: 1;
-    color: #fff;
-    position: relative;
-    background: conic-gradient(from 134deg at top, currentColor 92deg, #0000 0) top,
-        conic-gradient(from -46deg at bottom, currentColor 92deg, #0000 0) bottom;
-    background-size: 100% 50%;
-    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: white;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
 }
 
-.loader:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    --g: currentColor 10px, #0000 0 calc(100% - 10px), currentColor 0;
-    background: linear-gradient(45deg, var(--g)), linear-gradient(-45deg, var(--g));
-    animation: l7 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
-}
-
-@keyframes l7 {
-    33% {
-        inset: -6px;
-        transform: rotate(0deg);
-    }
-
-    66% {
-        inset: -6px;
-        transform: rotate(90deg);
-    }
-
-    100% {
-        inset: 0;
-        transform: rotate(90deg);
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .containerFluid {
-        padding: 0.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .getInTouch h1 {
+        font-size: 2rem;
     }
 
     .nameRow {
