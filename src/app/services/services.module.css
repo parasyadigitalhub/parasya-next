@@ -1,26 +1,31 @@
 .container-fluid {
-    background-color: black;
-    color: white;
-    padding: 2rem;
-    
+    background-color: #0a0a0a;
+    color: #f1f1f1;
+    padding: 3rem 2rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .heading h1 {
     margin-bottom: 3rem;
-    margin-top: 3rem;
-    margin-left: 3rem;
-    font-size: 55px;
-    color: red;
-    /* keep red or change to rgba if needed */
+    font-size: 4rem;
+    background: linear-gradient(90deg, #ff4d6d, #dc3545, #b3002d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 .details>div {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
-    padding: 1rem;
-    border-radius: 10px;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .name {
@@ -31,75 +36,119 @@
 
 .name h1 {
     margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(90deg, #fff, #bbb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .name p {
     color: #ccc;
+    line-height: 1.7;
+    font-size: 1rem;
 }
 
-/* Accordion styles */
 .accordian {
     flex: 2;
     min-width: 300px;
 }
 
 .accordionItem {
-    background-color: #242424;
-    border: none;
-    margin-bottom: 0.5rem;
-    border-radius: 5px;
+    background: rgba(20, 20, 20, 0.85);
+    border-radius: 16px;
     overflow: hidden;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(220, 53, 69, 0.2);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.accordionItem:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(220, 53, 69, 0.25);
 }
 
 .accordionButton {
     width: 100%;
-    background-color: #242424;
-    color: white;
-    font-weight: 500;
-    padding: 1rem;
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem 1.2rem;
     border: none;
     text-align: left;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    color: #dc3545;
+}
+
+.rotated {
+    transform: rotate(180deg);
 }
 
 .accordionButton:hover {
-    background-color: #3a3a3a;
-}
-
-.accordionButton:focus {
-    outline: 2px solid #555;
+    color: #dc3545;
 }
 
 .accordionButton.active {
-    background-color: #333;
-    font-size: 20px;
+    color: #dc3545;
+    font-weight: 700;
 }
 
 .accordionBody {
-    background-color: #242424;
+    background: rgba(30, 30, 30, 0.9);
     color: #ccc;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 1rem;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 1.2rem;
+    border-radius: 0 0 16px 16px;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .accordionBody.show {
-    max-height: 400px;
-    /* enough space for text */
-    padding: 1rem;
+    max-height: 500px;
+    padding: 1rem 1.2rem;
 }
 
-/* Responsive */
+@media (max-width: 992px) {
+    .details>div {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .name {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .container-fluid {
-        padding: 0.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .heading h1 {
-        font-size: 40px;
-        margin-bottom: 1rem;
-        margin-left: 1rem;
+        font-size: 2.8rem;
+    }
+
+    .accordionButton {
+        font-size: 0.95rem;
+    }
+
+    .accordionBody {
+        font-size: 0.9rem;
     }
 }

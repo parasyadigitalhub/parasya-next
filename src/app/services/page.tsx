@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./services.module.css";
+import { BsChevronDown } from "react-icons/bs";
 
 interface AccordionItem {
     id: string;
@@ -29,7 +30,11 @@ function Accordion({ items }: AccordionProps) {
                             }`}
                         onClick={() => toggleItem(index)}
                     >
-                        {item.title}
+                        <span>{item.title}</span>
+                        <BsChevronDown
+                            className={`${styles.arrow} ${activeIndex === index ? styles.rotated : ""
+                                }`}
+                        />
                     </button>
                     <div
                         className={`${styles.accordionBody} ${activeIndex === index ? styles.show : ""
