@@ -13,31 +13,33 @@ export default function IntroAnimation({ onFinish }: { onFinish: () => void }) {
         "PARASYA",
     ];
 
-    const [currentText, setCurrentText] = useState("");
     const [index, setIndex] = useState(0);
-    const [fadeOut, setFadeOut] = useState(false);
+    const [show, setShow] = useState(true);
 
     useEffect(() => {
         if (index < texts.length) {
-            setCurrentText(texts[index]);
-
-            if (index === texts.length - 1) {
-                setTimeout(() => {
-                    setFadeOut(true);
-                    setTimeout(() => onFinish(), 400);
-                }, 500);
-            } else {
-                const timer = setTimeout(() => setIndex(index + 1), 300);
-                return () => clearTimeout(timer);
-            }
+            setShow(true);
+            const timer = setTimeout(() => {
+                setShow(false);
+                setTimeout(() => setIndex(index + 1), 150); // wait before next
+            }, index === texts.length - 1 ? 450 : 200); // last word stays longer
+            return () => clearTimeout(timer);
+        } else {
+            setTimeout(() => onFinish(), 200); // smooth exit
         }
     }, [index]);
 
     return (
-        <div
-            className={`${styles.introContainer} ${fadeOut ? styles.fadeOut : ""}`}
-        >
-            <h1>{currentText}</h1>
+        <div className={`${styles.introContainer}`}>
+            {index < texts.length && (
+                <h1
+                    key={texts[index]}
+                    className={`${styles.text} ${show ? styles.fadeIn : styles.fadeOut} ${texts[index] === "PARASYA" ? styles.highlight : ""
+                        }`}
+                >
+                    {texts[index]}
+                </h1>
+            )}
         </div>
     );
 }

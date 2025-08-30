@@ -1,17 +1,52 @@
 .introContainer {
     height: 100vh;
-    background-color: black;
-    color: white;
+    width: 100%;
+    background: linear-gradient(135deg, #000, #111, #1a1a1a);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
-    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.text {
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    /* responsive scaling */
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 1.5px;
     text-align: center;
-    transition: opacity 0.2s ease;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.fadeIn {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .fadeOut {
     opacity: 0;
+    transform: translateY(-12px);
+}
+
+.highlight {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff4d6d, #ff2d55, #ff9f0a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 6px rgba(255, 77, 109, 0.3);
+    }
+
+    to {
+        text-shadow: 0 0 14px rgba(255, 47, 77, 0.7);
+    }
 }
