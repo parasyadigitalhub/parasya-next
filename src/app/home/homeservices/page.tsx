@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./homeservices.module.css";
 import { BsCodeSlash, BsBarChart, BsBank, BsCheck2 } from "react-icons/bs";
 
@@ -60,7 +61,9 @@ export default function HomeServices() {
             </div>
 
             <div className={styles.button}>
-                <button className={styles.btn}>View All Services</button>
+                <Link href="/services">
+                    <button className={styles.btn}>View All Services</button>
+                </Link>
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./homeblogs.module.css";
+import Link from "next/link";
 
 type BlogPost = {
     id: number;
@@ -73,7 +74,9 @@ export default function HomeBlogs() {
                                 <span
                                     className={styles.readMore}
                                 >
-                                    Read More →
+                                    <Link href={`/blog`} className={styles.readMore}>
+                                        Read More →
+                                    </Link>
                                 </span>
                             </div>
                         </div>
