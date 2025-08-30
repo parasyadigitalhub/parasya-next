@@ -117,39 +117,39 @@ export default function Careers() {
                 <h4>Join Us</h4>
             </div>
             {/* LEFT SIDE - JOB OPENINGS */}
-<div className={styles.left}>
-    <div className={styles.accordion}>
-        {openings.map((job, i) => (
-            <div key={job.id} className={styles.accordionItem}>
-                <button
-                    type="button"
-                    className={`${styles.accordionButton} ${activeIndex === i ? styles.active : ""}`}
-                    onClick={() => handleAccordionToggle(i, job.position)}
-                >
-                    {job.position}
-                    <BsChevronDown
-                        className={`${styles.arrow} ${activeIndex === i ? styles.rotated : ""}`}
-                    />
-                </button>
+            <div className={styles.left}>
+                <div className={styles.accordion}>
+                    {openings.map((job, i) => (
+                        <div key={job.id} className={styles.accordionItem}>
+                            <button
+                                type="button"
+                                className={`${styles.accordionButton} ${activeIndex === i ? styles.active : ""}`}
+                                onClick={() => handleAccordionToggle(i, job.position)}
+                            >
+                                {job.position}
+                                <BsChevronDown
+                                    className={`${styles.arrow} ${activeIndex === i ? styles.rotated : ""}`}
+                                />
+                            </button>
 
-                <div className={`${styles.accordionBody} ${activeIndex === i ? styles.show : ""}`}>
-                    <p><strong>Experience:</strong> {job.experience}</p>
-                    <p><strong>Description:</strong> {job.description}</p>
-                    {job.responsibility && (
-                        <>
-                            <p><strong>Responsibilities:</strong></p>
-                            <ul>
-                                {job.responsibility.split("\n").map((line, idx) => (
-                                    <li key={idx}>{line}</li>
-                                ))}
-                            </ul>
-                        </>
-                    )}
+                            <div className={`${styles.accordionBody} ${activeIndex === i ? styles.show : ""}`}>
+                                <p><strong>Experience:</strong> {job.experience}</p>
+                                <p><strong>Description:</strong> {job.description}</p>
+                                {job.responsibility && (
+                                    <>
+                                        <p><strong>Responsibilities:</strong></p>
+                                        <ul>
+                                            {job.responsibility.split("\n").map((line, idx) => (
+                                                <li key={idx}>{line}</li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
-        ))}
-    </div>
-</div>
 
             {/* RIGHT SIDE - FORM */}
             <div className={styles.right}>
