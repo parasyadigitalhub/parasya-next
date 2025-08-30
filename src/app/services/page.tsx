@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./services.module.css";
 import { BsChevronDown } from "react-icons/bs";
+import ScrollSection from "@/components/ScrollSection";
 
 interface AccordionItem {
     id: string;
@@ -193,61 +194,69 @@ export default function Services() {
 
             <div className={styles.details}>
                 {/* Brand Consultation */}
-                <div className={styles.consult}>
-                    <div className={styles.name}>
-                        <h1>Brand Consultation</h1>
-                        <p>
-                            Streamline your operations and empower innovation with our strategic
-                            digital transformation solutions. In today&apos;s dynamic business
-                            landscape, staying ahead of the curve is crucial. We help you
-                            navigate the digital transformation journey, from strategy
-                            development to implementation.
-                        </p>
+                <ScrollSection direction="up">
+                    <div className={styles.consult}>
+                        <div className={styles.name}>
+                            <h1>Brand Consultation</h1>
+                            <p>
+                                Streamline your operations and empower innovation with our strategic
+                                digital transformation solutions. In today&apos;s dynamic business
+                                landscape, staying ahead of the curve is crucial. We help you
+                                navigate the digital transformation journey, from strategy
+                                development to implementation.
+                            </p>
+                        </div>
+                        <Accordion items={brandConsultationItems} />
                     </div>
-                    <Accordion items={brandConsultationItems} />
-                </div>
+                </ScrollSection>
 
                 {/* Legal */}
-                <div className={styles.legal}>
-                    <div className={styles.name}>
-                        <h1>Legal Support & Compliance</h1>
-                        <p>
-                            In today's regulatory environment, legal compliance and proper
-                            documentation are crucial. We offer a comprehensive range of legal
-                            support services tailored to startups, SMEs, and established
-                            enterprises alike.
-                        </p>
+                <ScrollSection direction="right">
+                    <div className={styles.legal}>
+                        <div className={styles.name}>
+                            <h1>Legal Support & Compliance</h1>
+                            <p>
+                                In today's regulatory environment, legal compliance and proper
+                                documentation are crucial. We offer a comprehensive range of legal
+                                support services tailored to startups, SMEs, and established
+                                enterprises alike.
+                            </p>
+                        </div>
+                        <Accordion items={legalItems} />
                     </div>
-                    <Accordion items={legalItems} />
-                </div>
+                </ScrollSection>
 
                 {/* Software */}
-                <div className={styles.soft}>
-                    <div className={styles.name}>
-                        <h1>Software Development</h1>
-                        <p>
-                            Technology is at the heart of business growth. We specialize in
-                            creating user-centric web and mobile applications tailored to your
-                            specific needs. Our software development services focus on
-                            delivering scalable, high-performance solutions.
-                        </p>
+                <ScrollSection direction="left">
+                    <div className={styles.soft}>
+                        <div className={styles.name}>
+                            <h1>Software Development</h1>
+                            <p>
+                                Technology is at the heart of business growth. We specialize in
+                                creating user-centric web and mobile applications tailored to your
+                                specific needs. Our software development services focus on
+                                delivering scalable, high-performance solutions.
+                            </p>
+                        </div>
+                        <Accordion items={softwareItems} />
                     </div>
-                    <Accordion items={softwareItems} />
-                </div>
+                </ScrollSection>
 
                 {/* Branding */}
-                <div className={styles.brand}>
-                    <div className={styles.name}>
-                        <h1>Branding and Social Media Marketing</h1>
-                        <p>
-                            At Parasya, we understand that a strong brand is key to standing
-                            out in today's crowded marketplace. Our branding and digital
-                            marketing services are designed to build and enhance your brand
-                            identity while connecting you with your target audience.
-                        </p>
+                <ScrollSection direction="zoom">
+                    <div className={styles.brand}>
+                        <div className={styles.name}>
+                            <h1>Branding and Social Media Marketing</h1>
+                            <p>
+                                At Parasya, we understand that a strong brand is key to standing
+                                out in today's crowded marketplace. Our branding and digital
+                                marketing services are designed to build and enhance your brand
+                                identity while connecting you with your target audience.
+                            </p>
+                        </div>
+                        <Accordion items={brandingItems} />
                     </div>
-                    <Accordion items={brandingItems} />
-                </div>
+                </ScrollSection>
             </div>
         </div>
     );

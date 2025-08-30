@@ -1,3 +1,4 @@
+import ScrollSection from "@/components/ScrollSection";
 import HomeAbout from "./home/about/page";
 import Carousel from "./home/carousel/page";
 import HomeBlogs from "./home/homeblogs/page";
@@ -13,15 +14,42 @@ export default function HomePage() {
     return (
         <main>
             <HeroSection />
-            <Carousel autoplayDelay={2000} />
-            <HomeAbout/>
-            <HomeMission/>
-            <Partner/>
-            <ImageFlow/>
-            <HomeBlogs/>
-            <HomeServices/>
-            <Testimonials/>
-            <LogoGrid/>
+
+            <ScrollSection direction="up">
+                <Carousel autoplayDelay={2000} />
+            </ScrollSection>
+
+            <ScrollSection direction="left">
+                <HomeAbout />
+            </ScrollSection>
+
+            <ScrollSection direction="right">
+                <HomeMission />
+            </ScrollSection>
+
+            <ScrollSection direction="zoom">
+                <Partner />
+            </ScrollSection>
+
+            <ScrollSection direction="up">
+                <ImageFlow />
+            </ScrollSection>
+
+            <ScrollSection direction="fade" delay={0.2}>
+                <HomeBlogs />
+            </ScrollSection>
+
+            <ScrollSection direction="up">
+                <HomeServices />
+            </ScrollSection>
+
+            <ScrollSection direction="zoom">
+                <Testimonials />
+            </ScrollSection>
+
+            <ScrollSection direction="up">
+                <LogoGrid />
+            </ScrollSection>
         </main>
     );
 }
