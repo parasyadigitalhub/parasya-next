@@ -221,4 +221,9 @@
     .nameRow {
         flex-direction: column;
     }
+
+    .cards{ 
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
