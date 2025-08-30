@@ -23,6 +23,7 @@ export default function Careers() {
     });
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
 
     const openings: JobOpening[] = [
         {
@@ -50,18 +51,19 @@ export default function Careers() {
 
     const scriptUrl = "https://script.google.com/macros/s/AKfycbyGPPO6YIEyUbmi95FcIIDT9Liq2FTH1cHfr4iz55q-vaj5qD8ml62UTaiibqw03zrI/exec";
 
-    const handleAccordionToggle = (index: number) => {
+    const handleAccordionToggle = (index: number, position: string) => {
         setActiveIndex(activeIndex === index ? null : index);
+        setFormData(prev => ({ ...prev, position })); // auto-fill position
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
         setErrors({ ...errors, [e.target.name]: "" }); // clear error on typing
+        setSuccessMessage(""); // clear success message on new input
     };
 
     const validate = () => {
         const newErrors: Record<string, string> = {};
-
         if (!formData.name.trim()) newErrors.name = "Name is required.";
         if (!formData.email.trim()) {
             newErrors.email = "Email is required.";
@@ -71,7 +73,6 @@ export default function Careers() {
         if (!formData.phone.trim()) newErrors.phone = "Phone number is required.";
         if (!formData.position.trim()) newErrors.position = "Please select a position.";
         if (!formData.resumeLink.trim()) newErrors.resumeLink = "Resume link is required.";
-
         return newErrors;
     };
 
@@ -84,6 +85,7 @@ export default function Careers() {
         }
 
         setIsSubmitting(true);
+        setSuccessMessage("");
         const data = new FormData();
         Object.entries(formData).forEach(([key, value]) => {
             data.append(key, value || "N/A");
@@ -91,7 +93,7 @@ export default function Careers() {
 
         try {
             await fetch(scriptUrl, { method: "POST", body: data });
-            alert("Thank you! Your application has been submitted successfully.");
+            setSuccessMessage("✅ Application submitted successfully!");
             setFormData({
                 name: "",
                 email: "",
@@ -102,7 +104,7 @@ export default function Careers() {
             });
         } catch (err) {
             console.error(err);
-            alert("Something went wrong. Please try again later.");
+            setSuccessMessage("❌ Something went wrong. Please try again later.");
         } finally {
             setIsSubmitting(false);
         }
@@ -118,7 +120,7 @@ export default function Careers() {
                         <div key={job.id} className={styles.accordionItem}>
                             <button
                                 className={`${styles.accordionButton} ${activeIndex === i ? styles.active : ""}`}
-                                onClick={() => handleAccordionToggle(i)}
+                                onClick={() => handleAccordionToggle(i, job.position)}
                             >
                                 {job.position}
                             </button>
@@ -191,8 +193,10 @@ export default function Careers() {
                             </div>
 
                             <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
-                                {isSubmitting ? <div className={styles.loader}></div> : "Submit Application"}
+                                {isSubmitting ? <span className={styles.spinner}></span> : "Submit Application"}
                             </button>
+
+                            {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
                         </form>
                     </div>
                 </div>
