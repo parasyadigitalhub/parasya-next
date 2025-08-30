@@ -49,7 +49,7 @@ export default function Blogs() {
             <div className={styles.text}>
                 <div className={styles.heading}>
                     <h3>
-                        Latest <span className={styles.red}>Blogs</span>
+                        Our <span className={styles.red}>Blogs</span>
                     </h3>
                 </div>
                 <div className={styles.content}>
