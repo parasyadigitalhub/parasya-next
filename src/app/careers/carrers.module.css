@@ -17,13 +17,17 @@
     justify-content: flex-start;
 }
 
-.heading h4 {
+.headingRow {
+    width: 100%;
+    text-align: start;
     margin-bottom: 2rem;
+}
+
+.headingRow h4 {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #dc2626;
-    background: linear-gradient(90deg, #fff, #bbb);
+    background: linear-gradient(90deg, #ff4d6d, #dc3545, #b3002d);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -45,8 +49,7 @@
     overflow: hidden;
 }
 
-.accordionItem:hover,
-.card:hover {
+.accordionItem:hover {
     box-shadow: 0 15px 40px rgba(220, 53, 69, 0.25);
     transform: translateY(-2px);
 }
@@ -109,6 +112,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .formGroup label {
@@ -138,6 +142,7 @@
 .submitButton {
     width: 100%;
     padding: 0.75rem;
+    margin-top: 1rem;
     font-weight: 600;
     border-radius: 12px;
     color: #fff;

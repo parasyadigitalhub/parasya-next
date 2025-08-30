@@ -112,9 +112,11 @@ export default function Careers() {
 
     return (
         <div className={styles.careers}>
+            <div className={styles.headingRow}>
+                <h4>Join Us</h4>
+            </div>
             {/* LEFT SIDE - JOB OPENINGS */}
             <div className={styles.left}>
-                <div className={styles.heading}><h4>Join Us</h4></div>
                 <div className={styles.accordion}>
                     {openings.map((job, i) => (
                         <div key={job.id} className={styles.accordionItem}>
