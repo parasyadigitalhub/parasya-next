@@ -176,6 +176,7 @@ export default function Portfolio() {
             </div>
 
             {/* Branding Modal */}
+            {/* Branding Modal */}
             {selectedBranding && (
                 <div className={styles.modalOverlay} onClick={() => setSelectedBranding(null)}>
                     <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
@@ -184,61 +185,47 @@ export default function Portfolio() {
                             <button onClick={() => setSelectedBranding(null)}>✖</button>
                         </div>
                         <div className={styles.modalBody}>
-                            <img src={selectedBranding?.image} alt="Logo"/>
-                            {/* Overview */}
+                            <img src={selectedBranding.image} alt="logo" />
+
                             <section>
-                                <h4>Overview</h4>
+                                <h4>Branding Overview</h4>
                                 <p>{selectedBranding.brandingOverview}</p>
                             </section>
 
-                            {/* Problem Statement */}
                             <section>
                                 <h4>Problem Statement</h4>
                                 <p>{selectedBranding.problemStatement}</p>
                             </section>
 
-                            {/* Location */}
                             <section>
                                 <h4>Location</h4>
                                 <p>{selectedBranding.location}</p>
                             </section>
 
-                            {/* Logic Points */}
-                            <section>
-                                <h4>Logic Behind the Brand</h4>
-                                <div className={styles.logicGrid}>
-                                    {selectedBranding.logicPoints.map((point, i) => (
-                                        <div key={i} className={styles.logicCard}>
-                                            <img src={point.image} alt={point.title} />
-                                            <h5>{point.title}</h5>
-                                            <p>{point.description}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
+                            {selectedBranding.brandingImages?.length > 0 && (
+                                <section>
+                                    <h4>Branding Images</h4>
+                                    <div className={styles.galleryGrid}>
+                                        {selectedBranding.brandingImages.map((img, i) => (
+                                            <img key={i} src={img} alt={`Branding image ${i}`} />
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
 
-                            {/* Image Gallery */}
-                            <section>
-                                <h4>Branding Images</h4>
-                                <div className={styles.galleryGrid}>
-                                    {selectedBranding.brandingImages.map((img, i) => (
-                                        <img key={i} src={img} alt={`Branding image ${i}`} />
-                                    ))}
-                                </div>
-                            </section>
-
-                            {/* Testimonials */}
-                            <section>
-                                <h4>Testimonials</h4>
-                                <div className={styles.testimonials}>
-                                    {selectedBranding.testimonials.map((t, i) => (
-                                        <blockquote key={i}>
-                                            “{t.text}”
-                                            <footer>- {t.author}</footer>
-                                        </blockquote>
-                                    ))}
-                                </div>
-                            </section>
+                            {selectedBranding.testimonials?.length > 0 && (
+                                <section>
+                                    <h4>Testimonials</h4>
+                                    <div className={styles.testimonials}>
+                                        {selectedBranding.testimonials.map((t, i) => (
+                                            <blockquote key={i}>
+                                                “{t.text}”
+                                                <footer>- {t.author}</footer>
+                                            </blockquote>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
                         </div>
                     </div>
                 </div>

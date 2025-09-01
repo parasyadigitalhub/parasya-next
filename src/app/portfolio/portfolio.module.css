@@ -1,263 +1,330 @@
 .portfolioSection {
-    background-color: #000;
-    color: #fff;
-    padding: 3rem 1rem;
+    background: linear-gradient(145deg, #0a0a0a, #121212);
+    color: #f5f5f5;
+    padding: 4rem 2rem;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Heading */
 .heading h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
     text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
 }
 
 .heading p {
-    font-size: 1.1rem;
-    color: #ccc;
+    font-size: 1.2rem;
+    color: #aaa;
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2rem;
 }
 
 .textDanger {
     color: #dc3545;
 }
 
+/* Tabs */
 .customNavTabs {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     list-style: none;
     padding: 0;
 }
 
 .navLinkCustom {
-    background: #1e1e1e;
-    color: #fff;
+    background: transparent;
+    border: 1px solid #333;
+    color: #ddd;
     font-weight: 500;
     font-size: 1.1rem;
-    padding: 1rem 1.5rem;
-    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.4s ease;
 }
 
 .navLinkCustom:hover {
-    background: #000;
+    color: #fff;
+    border-color: #dc3545;
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.4);
 }
 
 .navLinkCustom.active {
-    background: #dc3545;
-    font-weight: bold;
-    box-shadow: inset 0 -3px 0 #fff;
+    background: linear-gradient(90deg, #dc3545, #ff4f6d);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.6);
 }
 
-.tabFade {
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Row + Col */
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .col {
-    flex: 1 1 calc(25% - 1rem);
-    min-width: 250px;
+    flex: 1 1 calc(25% - 2rem);
+    min-width: 260px;
 }
 
+/* Card */
 .card {
-    background: #111;
-    color: #fff;
-    border-radius: 0.5rem;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 1rem;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     display: flex;
     flex-direction: column;
     height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
 }
 
 .card:hover {
-    transform: scale(1.03);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(220, 53, 69, 0.3);
 }
 
 .cardImgTop {
     object-fit: cover;
     height: 200px;
     width: 100%;
+    border-bottom: 1px solid #222;
+    /* background-color: white; */
 }
 
 .cardBody {
-    padding: 1rem;
+    padding: 1.5rem;
     flex-grow: 1;
+}
+
+.cardBody h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.cardBody p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #bbb;
 }
 
 .cardFooter {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #222;
 }
 
 .cardFooter button,
 .cardFooter a {
     background: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #555;
     color: #fff;
-    padding: 0.5rem 1.2rem;
+    padding: 0.6rem 1.4rem;
     cursor: pointer;
-    transition: all 0.3s;
-    border-radius: 0.3rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
     text-decoration: none;
+    font-size: 0.95rem;
 }
 
 .cardFooter button:hover,
 .cardFooter a:hover {
     background: #dc3545;
     border-color: #dc3545;
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
 }
 
-/* Nav Pills */
-.flexContainer {
-    display: flex;
-    gap: 2rem;
-}
-
+/* Pills */
 .navPills {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.6rem;
     min-width: 220px;
 }
 
 .pill {
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    color: #ddd;
     text-align: left;
-    padding: 0.75rem 1rem;
+    padding: 0.9rem 1.2rem;
     cursor: pointer;
-    transition: all 0.3s;
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-.pill:hover,
+.pill:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
 .activePill {
-    background: #fff;
-    color: #000;
-    border-color: #dc3545;
-}
-
-.flexGrow {
-    flex-grow: 1;
+    background: linear-gradient(90deg, #dc3545, #ff4f6d);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.5);
 }
 
 /* Modal */
 .modalOverlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 50;
+    align-items: center;
+    z-index: 1050;
+    animation: fadeIn 0.3s ease forwards;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal */
 .modal {
-    background: #0d0d0d;
-    border-radius: 0.5rem;
-    width: 80%;
-    max-width: 900px;
-    max-height: 80vh;
+    background: #1a1a1a;
+    border-radius: 1rem;
+    width: 85%;
+    max-width: 950px;
+    max-height: 85vh;
     overflow-y: auto;
-    animation: fadeIn 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    animation: scaleIn 0.35s ease forwards;
+    transform-origin: center;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 .modalHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #dc3545;
-    padding: 1rem;
+    border-bottom: 1px solid #333;
+    padding: 1.2rem 1.5rem;
     color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    background: #1a1a1a;
+    z-index: 10;
+}
+
+.modalHeader button {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modalHeader button:hover {
+    color: #dc3545;
 }
 
 .modalBody {
-    padding: 1rem;
-    color: #e0e0e0;
+    padding: 2rem;
+    color: #ddd;
+    line-height: 1.7;
 }
 
-/* Logic Points */
-.logicGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+.modalBody img {
+    max-width: 200px;
+    border-radius: 0.6rem;
+    margin-bottom: 1.5rem;
 }
 
-.logicCard {
-    background: #111;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    text-align: center;
-    color: #fff;
+/* Sections inside modal */
+.modalBody section {
+    margin-bottom: 2rem;
 }
 
-.logicCard img {
-    max-width: 100px;
-    margin-bottom: 0.5rem;
+.modalBody h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #ff4f6d;
+    font-weight: 600;
+    border-left: 3px solid #dc3545;
+    padding-left: 0.6rem;
 }
 
-/* Gallery */
+/* Gallery grid */
 .galleryGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.5rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
 }
 
 .galleryGrid img {
+    border-radius: 0.6rem;
     width: 100%;
-    border-radius: 0.3rem;
+    height: 120px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galleryGrid img:hover {
+    transform: scale(1.05);
 }
 
 /* Testimonials */
 .testimonials {
-    margin-top: 1rem;
-    padding-left: 1rem;
     border-left: 3px solid #dc3545;
+    padding-left: 1rem;
+    margin-top: 1rem;
 }
 
 .testimonials blockquote {
-    margin: 0 0 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
     font-style: italic;
     color: #ccc;
+    margin-bottom: 1rem;
 }
 
 .testimonials footer {
     font-size: 0.9rem;
     color: #888;
-    margin-top: 0.3rem;
 }
 
 @media (max-width: 767px) {
     .portfolioSection {
-        padding: 1rem;
-        margin-top: -50px;
+        padding: 2rem 1rem;
+        margin-top: -40px;
     }
 
     .flexContainer {
@@ -267,15 +334,27 @@
     .navPills {
         flex-direction: row;
         justify-content: center;
-        border-bottom: 1px solid #555;
-        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #333;
+        padding-bottom: 0.8rem;
+        overflow-x: auto;
     }
 
     .pill {
+        flex: 1;
         text-align: center;
+        min-width: 100px;
     }
 
     .modal {
         width: 95%;
+        max-height: 80vh;
+    }
+
+    .modalBody {
+        padding: 1.2rem;
+    }
+
+    .modalBody img {    
+        max-width: 150px;
     }
 }
