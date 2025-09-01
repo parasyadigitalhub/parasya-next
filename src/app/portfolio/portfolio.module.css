@@ -200,6 +200,60 @@
     color: #e0e0e0;
 }
 
+/* Logic Points */
+.logicGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.logicCard {
+    background: #111;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+}
+
+.logicCard img {
+    max-width: 100px;
+    margin-bottom: 0.5rem;
+}
+
+/* Gallery */
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.galleryGrid img {
+    width: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+}
+
+/* Testimonials */
+.testimonials {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid #dc3545;
+}
+
+.testimonials blockquote {
+    margin: 0 0 1rem;
+    font-style: italic;
+    color: #ccc;
+}
+
+.testimonials footer {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.3rem;
+}
+
 @media (max-width: 767px) {
     .portfolioSection {
         padding: 1rem;

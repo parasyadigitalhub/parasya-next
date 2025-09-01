@@ -53,7 +53,7 @@ export default function Portfolio() {
                         className={`${styles.navLinkCustom} ${activeTab === "branding" ? styles.active : ""}`}
                         onClick={() => setActiveTab("branding")}
                     >
-                        🎨 Branding
+                        Branding
                     </button>
                 </li>
                 <li>
@@ -64,7 +64,7 @@ export default function Portfolio() {
                             setActiveCategory("All");
                         }}
                     >
-                        📱 Mobile Apps
+                        Mobile Apps
                     </button>
                 </li>
                 <li>
@@ -75,7 +75,7 @@ export default function Portfolio() {
                             setActiveCategory("All");
                         }}
                     >
-                        💻 Web Solutions
+                        Web Solutions
                     </button>
                 </li>
             </ul>
@@ -84,7 +84,7 @@ export default function Portfolio() {
             <div className={styles.tabFade}>
                 {activeTab === "branding" && (
                     <div className={styles.row}>
-                        {companies.map((branding:any) => (
+                        {companies.map((branding: any) => (
                             <div key={branding.id} className={styles.col}>
                                 <div className={styles.card}>
                                     <img src={branding.image} alt={branding.name} className={styles.cardImgTop} />
@@ -184,9 +184,61 @@ export default function Portfolio() {
                             <button onClick={() => setSelectedBranding(null)}>✖</button>
                         </div>
                         <div className={styles.modalBody}>
-                            <p>{selectedBranding.brandingOverview}</p>
-                            <p>{selectedBranding.problemStatement}</p>
-                            <p>{selectedBranding.location}</p>
+                            <img src={selectedBranding?.image} alt="Logo"/>
+                            {/* Overview */}
+                            <section>
+                                <h4>Overview</h4>
+                                <p>{selectedBranding.brandingOverview}</p>
+                            </section>
+
+                            {/* Problem Statement */}
+                            <section>
+                                <h4>Problem Statement</h4>
+                                <p>{selectedBranding.problemStatement}</p>
+                            </section>
+
+                            {/* Location */}
+                            <section>
+                                <h4>Location</h4>
+                                <p>{selectedBranding.location}</p>
+                            </section>
+
+                            {/* Logic Points */}
+                            <section>
+                                <h4>Logic Behind the Brand</h4>
+                                <div className={styles.logicGrid}>
+                                    {selectedBranding.logicPoints.map((point, i) => (
+                                        <div key={i} className={styles.logicCard}>
+                                            <img src={point.image} alt={point.title} />
+                                            <h5>{point.title}</h5>
+                                            <p>{point.description}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+
+                            {/* Image Gallery */}
+                            <section>
+                                <h4>Branding Images</h4>
+                                <div className={styles.galleryGrid}>
+                                    {selectedBranding.brandingImages.map((img, i) => (
+                                        <img key={i} src={img} alt={`Branding image ${i}`} />
+                                    ))}
+                                </div>
+                            </section>
+
+                            {/* Testimonials */}
+                            <section>
+                                <h4>Testimonials</h4>
+                                <div className={styles.testimonials}>
+                                    {selectedBranding.testimonials.map((t, i) => (
+                                        <blockquote key={i}>
+                                            “{t.text}”
+                                            <footer>- {t.author}</footer>
+                                        </blockquote>
+                                    ))}
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </div>
@@ -201,9 +253,39 @@ export default function Portfolio() {
                             <button onClick={() => setSelectedApp(null)}>✖</button>
                         </div>
                         <div className={styles.modalBody}>
-                            <p>{selectedApp.appOverview}</p>
-                            <p>{selectedApp.appStatement}</p>
-                            <p>{selectedApp.location}</p>
+                            <img src={selectedApp?.image} alt="logo" />
+                            {/* Overview */}
+                            <section>
+                                <h4>App Overview</h4>
+                                <p>{selectedApp.appOverview}</p>
+                            </section>
+
+                            {/* Problem / App Statement */}
+                            <section>
+                                <h4>Details</h4>
+                                <p>{selectedApp.appStatement}</p>
+                            </section>
+
+                            {/* Location */}
+                            <section>
+                                <h4>Location</h4>
+                                <p>{selectedApp.location}</p>
+                            </section>
+
+                            {/* Testimonials */}
+                            {selectedApp.testimonials?.length > 0 && (
+                                <section>
+                                    <h4>Testimonials</h4>
+                                    <div className={styles.testimonials}>
+                                        {selectedApp.testimonials.map((t, i) => (
+                                            <blockquote key={i}>
+                                                “{t.text}”
+                                                <footer>- {t.author}</footer>
+                                            </blockquote>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
                         </div>
                     </div>
                 </div>
