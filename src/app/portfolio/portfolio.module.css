@@ -1,0 +1,227 @@
+.portfolioSection {
+    background-color: #000;
+    color: #fff;
+    padding: 3rem 1rem;
+}
+
+.heading h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.heading p {
+    font-size: 1.1rem;
+    color: #ccc;
+    text-align: center;
+}
+
+.textDanger {
+    color: #dc3545;
+}
+
+.customNavTabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.navLinkCustom {
+    background: #1e1e1e;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.navLinkCustom:hover {
+    background: #000;
+}
+
+.navLinkCustom.active {
+    background: #dc3545;
+    font-weight: bold;
+    box-shadow: inset 0 -3px 0 #fff;
+}
+
+.tabFade {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.col {
+    flex: 1 1 calc(25% - 1rem);
+    min-width: 250px;
+}
+
+.card {
+    background: #111;
+    color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.cardImgTop {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+
+.cardBody {
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.cardFooter button,
+.cardFooter a {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 0.3rem;
+    text-decoration: none;
+}
+
+.cardFooter button:hover,
+.cardFooter a:hover {
+    background: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Nav Pills */
+.flexContainer {
+    display: flex;
+    gap: 2rem;
+}
+
+.navPills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 220px;
+}
+
+.pill {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pill:hover,
+.activePill {
+    background: #fff;
+    color: #000;
+    border-color: #dc3545;
+}
+
+.flexGrow {
+    flex-grow: 1;
+}
+
+/* Modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.modal {
+    background: #0d0d0d;
+    border-radius: 0.5rem;
+    width: 80%;
+    max-width: 900px;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dc3545;
+    padding: 1rem;
+    color: #fff;
+}
+
+.modalBody {
+    padding: 1rem;
+    color: #e0e0e0;
+}
+
+@media (max-width: 767px) {
+    .portfolioSection {
+        padding: 1rem;
+        margin-top: -50px;
+    }
+
+    .flexContainer {
+        flex-direction: column;
+    }
+
+    .navPills {
+        flex-direction: row;
+        justify-content: center;
+        border-bottom: 1px solid #555;
+        padding-bottom: 0.5rem;
+    }
+
+    .pill {
+        text-align: center;
+    }
+
+    .modal {
+        width: 95%;
+    }
+}
