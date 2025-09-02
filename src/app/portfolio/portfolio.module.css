@@ -364,6 +364,53 @@
     color: #ccc;
 }
 
+.brandingRow {
+    display: flex;
+    gap: 1px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.brandingCol:first-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.brandingCol:last-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.brandingCol img {
+    max-width: 100%;
+    border-radius: 0.6rem;
+}
+
+.logicGridTwo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.galleryGridThree {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* gap: 1rem; */
+}
+
+.galleryGridThree img {
+    border-radius: 0.6rem;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galleryGridThree img:hover {
+    transform: scale(1.05);
+}
+
 @media (max-width: 767px) {
     .portfolioSection {
         padding: 2rem 1rem;
@@ -397,7 +444,25 @@
         padding: 1.2rem;
     }
 
-    .modalBody img {    
+    .modalBody img {
         max-width: 150px;
+    }
+
+    .brandingRow {
+        flex-direction: column;
+    }
+
+    .brandingCol:first-child,
+    .brandingCol:last-child {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .logicGridTwo {
+        grid-template-columns: 1fr;
+    }
+
+    .galleryGridThree {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

@@ -185,27 +185,36 @@ export default function Portfolio() {
                             <button onClick={() => setSelectedBranding(null)}>✖</button>
                         </div>
                         <div className={styles.modalBody}>
-                            <img src={selectedBranding.image} alt="logo" />
+                            <div className={styles.brandingRow}>
+                                {/* Left column: Logo */}
+                                <div className={styles.brandingCol}>
+                                    <img src={selectedBranding.image} alt="logo" />
+                                </div>
 
-                            <section>
-                                <h4>Branding Overview</h4>
-                                <p>{selectedBranding.brandingOverview}</p>
-                            </section>
+                                {/* Right column: Overview + Problem + Location */}
+                                <div className={styles.brandingCol}>
+                                    <section>
+                                        <h4>Branding Overview</h4>
+                                        <p>{selectedBranding.brandingOverview}</p>
+                                    </section>
 
-                            <section>
-                                <h4>Problem Statement</h4>
-                                <p>{selectedBranding.problemStatement}</p>
-                            </section>
+                                    <section>
+                                        <h4>Problem Statement</h4>
+                                        <p>{selectedBranding.problemStatement}</p>
+                                    </section>
 
-                            <section>
-                                <h4>Location</h4>
-                                <p>{selectedBranding.location}</p>
-                            </section>
+                                    <section>
+                                        <h4>Location</h4>
+                                        <p>{selectedBranding.location}</p>
+                                    </section>
+                                </div>
+                            </div>
 
+                            {/* Logic Points */}
                             {selectedBranding.logicPoints?.length > 0 && (
                                 <section>
                                     <h4>Logic Points</h4>
-                                    <div className={styles.logicGrid}>
+                                    <div className={styles.logicGridTwo}>
                                         {selectedBranding.logicPoints.map((logic, i) => (
                                             <div key={i} className={styles.logicCard}>
                                                 <img src={logic.image} alt={logic.title} />
@@ -219,10 +228,11 @@ export default function Portfolio() {
                                 </section>
                             )}
 
+                            {/* Branding Images */}
                             {selectedBranding.brandingImages?.length > 0 && (
                                 <section>
                                     <h4>Branding Images</h4>
-                                    <div className={styles.galleryGrid}>
+                                    <div className={styles.galleryGridThree}>
                                         {selectedBranding.brandingImages.map((img, i) => (
                                             <img key={i} src={img} alt={`Branding image ${i}`} />
                                         ))}
@@ -230,6 +240,7 @@ export default function Portfolio() {
                                 </section>
                             )}
 
+                            {/* Testimonials */}
                             {selectedBranding.testimonials?.length > 0 && (
                                 <section>
                                     <h4>Testimonials</h4>
