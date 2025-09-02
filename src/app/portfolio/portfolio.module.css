@@ -321,6 +321,49 @@
     color: #888;
 }
 
+/* Logic Points */
+.logicGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.logicCard {
+    display: flex;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.8rem;
+    padding: 1rem;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logicCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.logicCard img {
+    width: 90px;
+    height: 90px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.logicCard h6 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.logicCard p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
 @media (max-width: 767px) {
     .portfolioSection {
         padding: 2rem 1rem;

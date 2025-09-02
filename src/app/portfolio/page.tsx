@@ -202,6 +202,23 @@ export default function Portfolio() {
                                 <p>{selectedBranding.location}</p>
                             </section>
 
+                            {selectedBranding.logicPoints?.length > 0 && (
+                                <section>
+                                    <h4>Logic Points</h4>
+                                    <div className={styles.logicGrid}>
+                                        {selectedBranding.logicPoints.map((logic, i) => (
+                                            <div key={i} className={styles.logicCard}>
+                                                <img src={logic.image} alt={logic.title} />
+                                                <div>
+                                                    <h6># {logic.title}</h6>
+                                                    <p>{logic.description}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
+
                             {selectedBranding.brandingImages?.length > 0 && (
                                 <section>
                                     <h4>Branding Images</h4>
