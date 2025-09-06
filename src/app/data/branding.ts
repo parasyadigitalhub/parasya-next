@@ -374,7 +374,7 @@ export const companies = [
         logoImage: '/portfolio/webapps/aviorbiotech/logo.webp'
     },
     {
-        id: 7,
+        id: 8,
         name: 'CleanBy Maria',
         description: 'Home Service',
         image: '/portfolio/mobileapps/cleanbymaria/logo.webp',
@@ -424,7 +424,7 @@ export const companies = [
         logoImage: '/portfolio/branding/cleanbymaria/logo.webp'
     },
     {
-        id: 8,
+        id: 9,
         name: 'LuhLuh',
         description: 'Perfumes',
         image: '/portfolio/branding/luhluh/logo5.webp',
@@ -471,7 +471,7 @@ export const companies = [
         logoImage: '/portfolio/branding/luhluh/logo5.webp'
     },
     {
-        id: 9,
+        id: 10,
         name: 'MMK Trading',
         description: 'Trade',
         image: '/portfolio/webapps/mmk/logo.webp',
@@ -518,7 +518,7 @@ export const companies = [
         logoImage: '/portfolio/webapps/mmk/logo4.webp'
     },
     {
-        id: 10,
+        id: 11,
         name: 'Easy Heal',
         description: 'Healthcare',
         image: '/portfolio/branding/easyheal/logo.webp',
@@ -570,7 +570,7 @@ export const companies = [
         logoImage: '/portfolio/branding/easyheal/logo.webp'
     },
     {
-        id: 11,
+        id: 12,
         name: 'Make My Event',
         description: 'Event Managemennt',
         image: '/portfolio/branding/makemyevent/logo.webp',
@@ -626,7 +626,7 @@ export const companies = [
         logoImage: '/portfolio/branding/makemyevent/logo.webp'
     },
     {
-        id: 12,
+        id: 13,
         name: 'Magnolia Touch',
         description: 'Home Service',
         image: '/portfolio/branding/magnolia/logo.webp',
@@ -673,7 +673,7 @@ export const companies = [
         logoImage: '/portfolio/branding/magnolia/logo.webp'
     },
     {
-        id: 13,
+        id: 14,
         name: 'ProtMeals',
         description: 'Food Delivery',
         image: '/portfolio/branding/protmeals/logo.webp',
