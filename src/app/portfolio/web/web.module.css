@@ -1,25 +1,25 @@
 /* Row + Col */
 .row {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
 .col {
-    flex: 1 1 calc(25% - 2rem);
-    min-width: 260px;
+    flex: unset;
+    min-width: unset;
 }
 
 /* Card */
 .card {
-    background: rgba(20, 20, 20, 0.9);
+    background: linear-gradient(160deg, rgba(30, 30, 30, 0.95), rgba(20, 20, 20, 0.9));
     border-radius: 1rem;
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(6px);
 }
 
@@ -43,16 +43,16 @@
 }
 
 .cardBody h5 {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.35rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
-    color: #fff;
+    color: #f9f9f9;
 }
 
 .cardBody p {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #bbb;
+    color: #ddd;
 }
 
 .cardFooter {
@@ -140,7 +140,10 @@
 
 /* Modal */
 .modal {
-    background: #1a1a1a;
+    background: linear-gradient(165deg, #1c1c1c, #111);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    scrollbar-width: thin;
+    scrollbar-color: #444 #1a1a1a;
     border-radius: 1rem;
     width: 85%;
     max-width: 950px;
@@ -149,6 +152,19 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
     animation: scaleIn 0.35s ease forwards;
     transform-origin: center;
+}
+
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: #111;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
 }
 
 @keyframes scaleIn {
@@ -168,14 +184,17 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #333;
+    border-radius: 0.8rem;
     padding: 1.2rem 1.5rem;
     color: #fff;
     font-size: 1.25rem;
     font-weight: 600;
     position: sticky;
     top: 0;
-    background: #1a1a1a;
+    background: rgba(255, 255, 255, 0.02);
     z-index: 10;
+    margin-bottom: 1.5rem;
+
 }
 
 .modalHeader button {
@@ -209,32 +228,39 @@
 }
 
 .modalBody h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.25rem;
     color: #ff4f6d;
-    font-weight: 600;
-    border-left: 3px solid #dc3545;
-    padding-left: 0.6rem;
+    margin-bottom: 0.8rem;
+    border-left: 4px solid #dc3545;
+    padding-left: 0.8rem;
+    letter-spacing: 0.5px;
 }
 
 /* Testimonials */
 .testimonials {
-    border-left: 3px solid #dc3545;
     padding-left: 1rem;
     margin-top: 1rem;
 }
 
 .testimonials blockquote {
-    font-size: 1rem;
-    line-height: 1.6;
-    font-style: italic;
-    color: #ccc;
-    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+    border-left: 3px solid #ff4f6d;
+    padding-left: 1rem;
+    margin: 0 0 1.2rem;
 }
 
 .testimonials footer {
     font-size: 0.9rem;
-    color: #888;
+    color: #aaa;
+    margin-top: 0.3rem;
+}
+
+@media (max-width: 992px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 767px) {
@@ -272,5 +298,11 @@
 
     .modalBody img {
         max-width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .row {
+        grid-template-columns: 1fr;
     }
 }
