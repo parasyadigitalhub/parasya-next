@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./team.module.css";
 import { BsLinkedin } from "react-icons/bs";
+import Image from "next/image";
 
 const teamMembers = [
     {
@@ -67,7 +68,7 @@ export default function Team() {
     const [scrollX, setScrollX] = useState(0);
     const [startX, setStartX] = useState(0);
     const speed = 0.5;
-    let animationFrameId: number;
+    const animationFrameId = useRef<number | null>(null);
 
     // Auto scroll
     useEffect(() => {
@@ -77,17 +78,19 @@ export default function Team() {
         const step = () => {
             if (!isDragging) {
                 setScrollX((prev) => {
-                    let next = prev - speed;
+                    const next = prev - speed;
                     const width = track.scrollWidth / 2;
                     if (Math.abs(next) >= width) return 0;
                     return next;
                 });
             }
-            animationFrameId = requestAnimationFrame(step);
+            animationFrameId.current = requestAnimationFrame(step);
         };
 
-        animationFrameId = requestAnimationFrame(step);
-        return () => cancelAnimationFrame(animationFrameId);
+        animationFrameId.current = requestAnimationFrame(step);
+        return () => {
+            if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
+        };
     }, [isDragging]);
 
     useEffect(() => {
@@ -153,7 +156,14 @@ export default function Team() {
                     >
                         {[...teamMembers, ...teamMembers].map((card, idx) => (
                             <div className={styles.teamImage} key={idx}>
-                                <img src={card.image} alt={card.name} loading="lazy" />
+                                <Image
+                                    src={card.image}
+                                    alt={card.name}
+                                    width={350}
+                                    height={420}
+                                    loading="lazy"
+                                    className={styles.teamImg}
+                                />
                                 <div className={styles.teamOverlay}>
                                     <div className={styles.teamInfo}>
                                         <h5>{card.name}</h5>

@@ -84,7 +84,7 @@ export default function Journey() {
                                     internationally. This big achievement highlights their ability
                                     to deliver outstanding results on a large scale. It also
                                     reflects the strong trust and confidence of clients across
-                                    industries. The team's steady focus on quality and innovation
+                                    industries. The team&apos;s steady focus on quality and innovation
                                     continued to make them stand out in a competitive market.
                                 </p>
                             )}

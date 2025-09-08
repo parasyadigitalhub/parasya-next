@@ -1,12 +1,20 @@
 "use client";
 
 import styles from "./welcome.module.css";
+import Image from "next/image";
 
 export default function Welcome() {
     return (
         <section>
             <div className={styles.img}>
-                <img src="/parasya/team.webp" alt="Parasya Team" />
+                <Image
+                    src="/parasya/team.webp"
+                    alt="Parasya Team"
+                    width={1200} // adjust depending on real dimensions
+                    height={600}
+                    priority
+                    className={styles.teamImg}
+                />
             </div>
 
             <div className={styles.headings}>
