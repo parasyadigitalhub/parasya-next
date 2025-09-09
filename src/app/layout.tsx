@@ -3,7 +3,7 @@ import ClientLayout from "./ClientLayout";
 
 export const metadata = {
   title: "Parasya",
-  description: "Parasya official website",
+  description: "Elevating Your Identity",
 };
 
 export default function RootLayout({
