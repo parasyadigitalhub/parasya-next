@@ -53,6 +53,7 @@
     max-width: 1200px;
     width: 100%;
     z-index: 1;
+    margin: 0 auto;
 }
 
 .services .card {
@@ -171,6 +172,7 @@
     .services .cards {
         flex-direction: column;
         gap: 25px;
+        align-items: center;
     }
 
     .services .card {
