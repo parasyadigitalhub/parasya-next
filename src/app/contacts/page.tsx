@@ -75,7 +75,7 @@ export default function Contacts() {
                     </h1>
                 </div>
                 <div className={styles.para}>
-                    <p>Ready to transform your digital presence? Let's start a conversation</p>
+                    <p>Ready to transform your digital presence? Let&apos;s start a conversation</p>
                 </div>
             </div>
 

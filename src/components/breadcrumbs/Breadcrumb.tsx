@@ -3,29 +3,31 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Breadcrumb.module.css";
+import Image from "next/image";
 
 export default function Breadcrumb() {
     const pathname = usePathname();
 
     if (pathname === "/" || pathname === "/home") {
-        return null; // hide breadcrumb on homepage
+        return null;
     }
 
-    // Get current page (last segment)
     const segments = pathname.split("/").filter((seg) => seg);
     const currentPage = segments[segments.length - 1] || "";
 
-    // Format label (capitalize + replace dashes)
     const label =
         currentPage.charAt(0).toUpperCase() +
         currentPage.slice(1).replace(/-/g, " ");
 
     return (
         <div className={styles.logoBreadcrumbContainer}>
-            <img
+            <Image
                 src="/parasya/logo-white.webp"
                 alt="Logo"
+                width={140}
+                height={70}
                 className={styles.logoImg}
+                priority 
             />
 
             <nav aria-label="breadcrumb" className={styles.breadcrumbNav}>

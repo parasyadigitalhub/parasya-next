@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./planet.module.css";
+import Image from "next/image";
 
 export default function HeroSection() {
     const [rotation, setRotation] = useState(0);
@@ -74,10 +75,12 @@ export default function HeroSection() {
                 >
                     <div className={styles.planetGlow}></div>
                     <div className={styles.planetInner}>
-                        <img
+                        <Image
                             src="/home/planet.svg"
                             alt="Floating planet"
+                            fill   
                             style={{ opacity: isLoading ? 0 : 0.4 }}
+                            priority
                         />
                     </div>
                 </div>

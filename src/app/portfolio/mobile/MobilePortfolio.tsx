@@ -2,8 +2,14 @@
 import { useState } from "react";
 import styles from "./mobile.module.css";
 import { mobileApps } from "../../data/mobileapps";
+import Image from "next/image";
 
 type AppItem = typeof mobileApps[0];
+const imageStyle = {
+    border: '1px solid #fff',
+    width: '100%',
+    height: 'auto',
+}
 
 export default function MobilePortfolio() {
     const [activeCategory, setActiveCategory] = useState("All");
@@ -41,7 +47,13 @@ export default function MobilePortfolio() {
                     {groupedMobileApps[activeCategory].map((app) => (
                         <div key={app.id} className={styles.col}>
                             <div className={styles.card}>
-                                <img src={app.image} alt={app.name} className={styles.cardImgTop} />
+                                <Image
+                                    src={app.image}
+                                    alt={app.name}
+                                    width={400}
+                                    height={250}
+                                    className={styles.cardImgTop}
+                                />
                                 <div className={styles.cardBody}>
                                     <h5>{app.name}</h5>
                                     <p>{app.appOverview}</p>
@@ -64,7 +76,13 @@ export default function MobilePortfolio() {
                             <button onClick={() => setSelectedApp(null)}>✖</button>
                         </div>
                         <div className={styles.modalBody}>
-                            <img src={selectedApp.image} alt="logo" />
+                            <Image
+                                src={selectedApp.image}
+                                alt="logo"
+                                height={200}
+                                width={200}
+                                style={imageStyle}
+                            />
                             <section>
                                 <h4>App Overview</h4>
                                 <p>{selectedApp.appOverview}</p>

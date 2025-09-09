@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image"; 
 import styles from "./mobile.module.css";
 
 const images: string[] = [
@@ -21,7 +22,6 @@ export default function Mobile() {
 
     const speed = 0.5;
 
-    // Auto scroll effect
     useEffect(() => {
         const step = () => {
             if (!isDragging && trackRef.current) {
@@ -41,7 +41,6 @@ export default function Mobile() {
         return () => cancelAnimationFrame(animationRef.current!);
     }, [scrollX, isDragging]);
 
-    // Mouse & touch controls
     const onMouseDown = (e: React.MouseEvent) => {
         setIsDragging(true);
         setStartX(e.clientX - scrollX);
@@ -92,7 +91,14 @@ export default function Mobile() {
                 >
                     {images.concat(images).map((src, index) => (
                         <div key={index} className={styles.teamImage}>
-                            <img src={src} alt={`carousel-${index}`} loading="lazy" />
+                            <Image
+                                src={src}
+                                alt={`carousel-${index}`}
+                                width={350} 
+                                height={420} 
+                                className={styles.carouselImg}
+                                priority={index < 2}
+                            />
                         </div>
                     ))}
                 </div>

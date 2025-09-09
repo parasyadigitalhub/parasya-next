@@ -22,11 +22,18 @@
     animation: scroll-right 80s linear infinite;
 }
 
-.carouselTrack img {
+.carouselItem {
     height: 180px;
     width: 180px;
     margin-right: 20px;
     flex-shrink: 0;
+    position: relative;
+    /* needed for next/image fill */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carouselImg {
     object-fit: contain;
     pointer-events: none;
     user-select: none;

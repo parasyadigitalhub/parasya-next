@@ -3,12 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./header.module.css";
-import { BsFacebook } from "react-icons/bs";
-import { BsTwitterX } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
-import { BsWhatsapp } from "react-icons/bs";
-import { BsYoutube } from "react-icons/bs";
 import Social from "./social/social";
 
 export default function Header() {

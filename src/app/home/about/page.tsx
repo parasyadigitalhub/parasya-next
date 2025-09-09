@@ -17,18 +17,6 @@ export default function About() {
         }
     };
 
-    const onButtonHover = (e: React.MouseEvent<HTMLButtonElement>) => {
-        const button = e.currentTarget;
-        const rect = button.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        button.style.transform = `translate(${x * 0.2}px, ${y * 0.4}px)`;
-    };
-
-    const resetButtonHover = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.currentTarget.style.transform = "translate(0, 0)";
-    };
-
     return (
         <div className={`${styles.about}`}>
             <div className={styles.text}>
@@ -39,9 +27,9 @@ export default function About() {
                 </div>
                 <div className={styles.content}>
                     <p>
-                        At PARASYA, we're not just building a business; we're crafting a
+                        At PARASYA, we&apos;`re not just building a business; we&apos;`re crafting a
                         vision, one innovation at a time. Founded in 2023, we embarked on
-                        this journey with a shared dream to unlock your brand's full online
+                        this journey with a shared dream to unlock your brand&apos;`s full online
                         potential with our digital marketing expertise.
                     </p>
                     <Link href="/about">

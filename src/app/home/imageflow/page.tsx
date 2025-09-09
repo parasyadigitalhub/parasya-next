@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./imageflow.module.css";
+import Image from "next/image";
 
 const secondCarouselImagesTop: string[] = [
     "/home/secondcarousel/p1.webp",
@@ -33,8 +34,15 @@ export default function ImageFlow() {
                 <div className={styles.carouselTrack}>
                     {[...secondCarouselImagesTop, ...secondCarouselImagesTop].map(
                         (img, idx) => (
-                            <img key={`top-${idx}`} src={img} alt={`carousel-top-${idx}`} loading="lazy" />
-                        )
+                            <div className={styles.carouselItem} key={`top-${idx}`}>
+                                <Image
+                                    src={img}
+                                    alt={`carousel-top-${idx}`}
+                                    fill
+                                    className={styles.carouselImg}
+                                    loading="lazy"
+                                />
+                            </div>)
                     )}
                 </div>
             </div>
@@ -44,12 +52,15 @@ export default function ImageFlow() {
                 <div className={`${styles.carouselTrack} ${styles.reverse}`}>
                     {[...secondCarouselImagesBottom, ...secondCarouselImagesBottom].map(
                         (img, idx) => (
-                            <img
-                                key={`bottom-${idx}`}
-                                src={img}
-                                alt={`carousel-bottom-${idx}`}
-                                loading="lazy"
-                            />
+                            <div className={styles.carouselItem} key={`bottom-${idx}`}>
+                                <Image
+                                    src={img}
+                                    alt={`carousel-bottom-${idx}`}
+                                    fill
+                                    className={styles.carouselImg}
+                                    loading="lazy"
+                                />
+                            </div>
                         )
                     )}
                 </div>

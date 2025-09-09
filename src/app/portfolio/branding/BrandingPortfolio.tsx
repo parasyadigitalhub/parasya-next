@@ -2,8 +2,15 @@
 import { useState } from "react";
 import styles from "./branding.module.css";
 import { companies } from "../../data/branding";
+import Image from "next/image";
 
 type Branding = typeof companies[0];
+
+const imageStyle = {
+    border: '1px solid #fff',
+    width: '100%',
+    height: 'auto',
+}
 
 export default function BrandingPortfolio() {
     const [selectedBranding, setSelectedBranding] = useState<Branding | null>(null);
@@ -14,7 +21,13 @@ export default function BrandingPortfolio() {
                 {companies.map((branding) => (
                     <div key={branding.id} className={styles.col}>
                         <div className={styles.card}>
-                            <img src={branding.image} alt={branding.name} className={styles.cardImgTop} />
+                            <Image
+                                src={branding.image}
+                                alt={branding.name}
+                                width={400}
+                                height={250}
+                                className={styles.cardImgTop}
+                            />
                             <div className={styles.cardBody}>
                                 <h5>{branding.name}</h5>
                                 <p>{branding.description}</p>
@@ -37,7 +50,13 @@ export default function BrandingPortfolio() {
                         <div className={styles.modalBody}>
                             <div className={styles.brandingRow}>
                                 <div className={styles.brandingCol}>
-                                    <img src={selectedBranding.image} alt="logo" />
+                                    <Image
+                                        src={selectedBranding.image}
+                                        alt="logo"
+                                        height={200}
+                                        width={200}
+                                        style={imageStyle}
+                                    />
                                 </div>
                                 <div className={styles.brandingCol}>
                                     <section>
@@ -61,7 +80,12 @@ export default function BrandingPortfolio() {
                                     <div className={styles.logicGridTwo}>
                                         {selectedBranding.logicPoints.map((logic, i) => (
                                             <div key={i} className={styles.logicCard}>
-                                                <img src={logic.image} alt={logic.title} />
+                                                <Image
+                                                    src={logic.image}
+                                                    alt={logic.title}
+                                                    width={90}
+                                                    height={90}
+                                                />
                                                 <div>
                                                     <h6># {logic.title}</h6>
                                                     <p>{logic.description}</p>
@@ -77,7 +101,13 @@ export default function BrandingPortfolio() {
                                     <h4>Branding Images</h4>
                                     <div className={styles.galleryGridThree}>
                                         {selectedBranding.brandingImages.map((img, i) => (
-                                            <img key={i} src={img} alt={`Branding image ${i}`} />
+                                            <Image
+                                                key={i}
+                                                src={img}
+                                                alt={`Branding image ${i}`}
+                                                width={400}
+                                                height={300}
+                                            />
                                         ))}
                                     </div>
                                 </section>

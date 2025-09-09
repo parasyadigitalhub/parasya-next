@@ -216,7 +216,7 @@ export default function Services() {
                         <div className={styles.name}>
                             <h1>Legal Support & Compliance</h1>
                             <p>
-                                In today's regulatory environment, legal compliance and proper
+                                In today&apos;s regulatory environment, legal compliance and proper
                                 documentation are crucial. We offer a comprehensive range of legal
                                 support services tailored to startups, SMEs, and established
                                 enterprises alike.
@@ -249,7 +249,7 @@ export default function Services() {
                             <h1>Branding and Social Media Marketing</h1>
                             <p>
                                 At Parasya, we understand that a strong brand is key to standing
-                                out in today's crowded marketplace. Our branding and digital
+                                out in today&apos;s crowded marketplace. Our branding and digital
                                 marketing services are designed to build and enhance your brand
                                 identity while connecting you with your target audience.
                             </p>

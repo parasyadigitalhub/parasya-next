@@ -20,15 +20,12 @@
     will-change: transform;
 }
 
-.carouselTrack img {
-    height: 420px;
-    width: 350px;
-    flex-shrink: 0;
-    object-fit: cover;
+.carouselImg {
     border-radius: 20px;
-    pointer-events: none;
-    user-select: none;
+    object-fit: cover;
     transition: transform 0.5s ease-in-out;
+    user-select: none;
+    pointer-events: none;
 }
 
 .teamImage:hover img {
@@ -57,7 +54,8 @@
         width: 300px;
     }
 
-    .teamImage img {
+    .carouselImg {
+        width: 300px;
         height: 250px;
     }
 }

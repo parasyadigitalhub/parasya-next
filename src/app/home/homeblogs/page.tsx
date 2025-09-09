@@ -2,6 +2,7 @@
 
 import styles from "./homeblogs.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 type BlogPost = {
     id: number;
@@ -61,9 +62,11 @@ export default function HomeBlogs() {
                 {blogPosts.map((blog) => (
                     <div className={styles.loop} key={blog.id}>
                         <div className={styles.card}>
-                            <img
+                            <Image
                                 src={blog.image}
                                 alt={blog.title}
+                                width={500}
+                                height={300}
                                 className={styles.cardImgTop}
                                 loading="lazy"
                             />

@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./testimonials.module.css";
+import Image from "next/image";
 
 export default function Testimonials() {
     const testimonials = [
@@ -47,7 +48,13 @@ export default function Testimonials() {
                 {testimonials.map((itm) => (
                     <div className={styles.card} key={itm.id}>
                         <div className={styles.head}>
-                            <img src={itm.image} alt={itm.name} loading="lazy" />
+                            <Image
+                                src={itm.image}
+                                alt={itm.name}
+                                width={55}
+                                height={55}
+                                className={styles.profileImg}
+                            />
                             <h5>{itm.name}</h5>
                         </div>
                         <div className={styles.test}>

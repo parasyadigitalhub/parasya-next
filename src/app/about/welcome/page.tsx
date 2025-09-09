@@ -10,7 +10,7 @@ export default function Welcome() {
                 <Image
                     src="/parasya/team.webp"
                     alt="Parasya Team"
-                    width={1200} // adjust depending on real dimensions
+                    width={1200}
                     height={600}
                     priority
                     className={styles.teamImg}
@@ -22,20 +22,19 @@ export default function Welcome() {
                     Welcome to <span className={styles.red}>Parasya</span>
                 </h1>
                 <p>
-                    where we are dedicated to "Elevating Your Identity." Our tagline reflects our mission to
-                    enhance and amplify your brand's presence in the digital world. By employing innovative
-                    strategies and leveraging the latest technologies, we aim to refine your online identity
-                    and elevate your business to new heights.
+                    where we are dedicated to &quot;Elevating Your Identity.&quot; Our tagline reflects our mission
+                    to enhance and amplify your brand&apos;s presence in the digital world. By employing innovative
+                    strategies and leveraging the latest technologies, we aim to refine your online identity and
+                    elevate your business to new heights.
                     <br />
                     <br />
-                    At Parasya, we specialize in delivering cutting-edge digital marketing solutions tailored
-                    to meet the unique needs of each client. Our team of experts harnesses the power of
-                    innovative strategies and advanced technology to drive growth, enhance brand visibility,
-                    and maximize online presence. Whether you're looking to boost your social media
-                    engagement, optimize your search engine rankings, or create compelling content, Parasya
-                    is committed to helping your business succeed in the digital landscape. With a focus on
-                    results and customer satisfaction, we are your trusted partner in navigating the dynamic
-                    world of digital marketing.
+                    At Parasya, we specialize in delivering cutting-edge digital marketing solutions tailored to meet
+                    the unique needs of each client. Our team of experts harnesses the power of innovative strategies
+                    and advanced technology to drive growth, enhance brand visibility, and maximize online presence.
+                    Whether you&apos;re looking to boost your social media engagement, optimize your search engine
+                    rankings, or create compelling content, Parasya is committed to helping your business succeed in
+                    the digital landscape. With a focus on results and customer satisfaction, we are your trusted
+                    partner in navigating the dynamic world of digital marketing.
                 </p>
             </div>
         </section>

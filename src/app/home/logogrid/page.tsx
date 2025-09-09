@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./logogrid.module.css";
+import Image from "next/image";
 
 export default function LogoGrid() {
     const logoGrid = [
@@ -35,7 +36,14 @@ export default function LogoGrid() {
             <div className={styles.grid}>
                 {logoGrid.map((logo, idx) => (
                     <div className={styles.image} key={idx}>
-                        <img src={logo.src} alt={logo.alt} loading="lazy" />
+                        <Image
+                            src={logo.src}
+                            alt={logo.alt}
+                            width={200}    
+                            height={100}   
+                            className={styles.logoImg}
+                            loading="lazy"
+                        />
                     </div>
                 ))}
             </div>

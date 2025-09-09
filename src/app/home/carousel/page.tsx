@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./carousel.module.css";
 import Mobile from "./mobile/page";
 import { BsArrowLeft } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
+import Image from "next/image";
 
 type CarouselProps = {
     autoplayDelay?: number;
@@ -15,7 +16,6 @@ export default function Carousel({ autoplayDelay = 2000 }: CarouselProps) {
     const [isMobile, setIsMobile] = useState(false);
     const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
-    // ✅ Images are now inside the carousel
     const images: string[] = [
         "/home/carousel/futurestars.webp",
         "/home/carousel/keyworld.webp",
@@ -28,38 +28,39 @@ export default function Carousel({ autoplayDelay = 2000 }: CarouselProps) {
     const angleStep = 360 / images.length;
     const carouselRadius = 500;
 
-    const checkScreen = () => {
+    const checkScreen = useCallback(() => {
         setIsMobile(window.innerWidth < 768);
-    };
+    }, []);
+
+    const next = useCallback(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, [images.length]);
+
+    const prev = useCallback(() => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    }, [images.length]);
+
+    const stopAutoplay = useCallback(() => {
+        if (autoplayRef.current) clearInterval(autoplayRef.current);
+    }, []);
+
+    const startAutoplay = useCallback(() => {
+        stopAutoplay();
+        autoplayRef.current = setInterval(() => {
+            next();
+        }, autoplayDelay);
+    }, [autoplayDelay, next, stopAutoplay]);
 
     useEffect(() => {
         checkScreen();
         window.addEventListener("resize", checkScreen);
         startAutoplay();
+
         return () => {
             stopAutoplay();
             window.removeEventListener("resize", checkScreen);
         };
-    }, []);
-
-    const startAutoplay = () => {
-        stopAutoplay();
-        autoplayRef.current = setInterval(() => {
-            next();
-        }, autoplayDelay);
-    };
-
-    const stopAutoplay = () => {
-        if (autoplayRef.current) clearInterval(autoplayRef.current);
-    };
-
-    const prev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    };
-
-    const next = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
+    }, [checkScreen, startAutoplay, stopAutoplay]);
 
     const getCarouselTransform = () => {
         return `translateZ(-${carouselRadius}px) rotateY(-${currentIndex * angleStep}deg)`;
@@ -85,7 +86,13 @@ export default function Carousel({ autoplayDelay = 2000 }: CarouselProps) {
                                 className={`${styles.carouselItem3d} ${i === currentIndex ? styles.active : ""}`}
                                 style={{ transform: getItemTransform(i) }}
                             >
-                                <img src={src} alt={`3D image ${i + 1}`} />
+                                <Image
+                                    src={src}
+                                    alt={`3D image ${i + 1}`}
+                                    width={450}
+                                    height={450}
+                                    className={styles.carouselImg}
+                                />
                             </div>
                         ))}
                     </div>
@@ -98,7 +105,7 @@ export default function Carousel({ autoplayDelay = 2000 }: CarouselProps) {
                     </button>
                 </div>
             ) : (
-                <Mobile/>
+                <Mobile />
             )}
         </div>
     );

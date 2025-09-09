@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, type TargetAndTransition } from "motion/react";
 
 type ScrollSectionProps = {
     children: React.ReactNode;
@@ -12,7 +12,7 @@ export default function ScrollSection({
     delay = 0,
     direction = "up",
 }: ScrollSectionProps) {
-    let initial: Record<string, any> = { opacity: 0 };
+    let initial: TargetAndTransition = { opacity: 0 };
 
     switch (direction) {
         case "up":
