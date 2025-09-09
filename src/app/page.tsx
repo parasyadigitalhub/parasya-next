@@ -16,7 +16,7 @@ export default function HomePage() {
             <HeroSection />
 
             <ScrollSection direction="up">
-                <Carousel autoplayDelay={2000} />
+                <Carousel />
             </ScrollSection>
 
             <ScrollSection direction="left">

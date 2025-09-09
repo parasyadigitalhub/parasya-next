@@ -7,11 +7,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
 import Image from "next/image";
 
-type CarouselProps = {
-    autoplayDelay?: number;
-};
-
-export default function Carousel({ autoplayDelay = 2000 }: CarouselProps) {
+export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const autoplayRef = useRef<NodeJS.Timeout | null>(null);
@@ -25,6 +21,7 @@ export default function Carousel({ autoplayDelay = 2000 }: CarouselProps) {
         "/home/carousel/sportwindo.webp",
     ];
 
+    const autoplayDelay = 2000;
     const angleStep = 360 / images.length;
     const carouselRadius = 500;
 
