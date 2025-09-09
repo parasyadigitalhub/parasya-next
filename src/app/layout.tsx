@@ -2,8 +2,8 @@ import "./globals.css";
 import ClientLayout from "./ClientLayout";
 
 export const metadata = {
-  title: "Parasya",
-  description: "Elevating Your Identity",
+  title: "Parasya - Elevating Your Identity",
+  description: "Parasya helps elevate your brand identity through innovative solutions.",
   keywords: "branding, design, marketing, Parasya",
   authors: [{ name: "Parasya" }],
   viewport: "width=device-width, initial-scale=1",
