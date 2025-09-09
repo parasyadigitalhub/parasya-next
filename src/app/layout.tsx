@@ -15,7 +15,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://parasya.in/parasya/parasya.jpg",
+        url: "https://parasyassr.vercel.app/parasya/parasya.jpg",
         width: 1200,
         height: 630,
         alt: "Parasya Branding"
@@ -26,7 +26,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Parasya - Elevating Your Identity",
     description: "Parasya helps elevate your brand identity through innovative solutions.",
-    images: ["https://parasya.in/images/twitter-image.png"],
+    images: ["https://parasyassr.vercel.app/images/twitter-image.png"],
     site: "@Parasya",
     creator: "@Parasya",
   },
