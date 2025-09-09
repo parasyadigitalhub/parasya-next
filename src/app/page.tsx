@@ -9,47 +9,58 @@ import HomeMission from "./home/mission/page";
 import Partner from "./home/partner/page";
 import HeroSection from "./home/planet/page";
 import Testimonials from "./home/testimonials/page";
+import Meta from "@/components/meta"
 
 export default function HomePage() {
     return (
-        <main>
-            <HeroSection />
+        <>
 
-            <ScrollSection direction="up">
-                <Carousel />
-            </ScrollSection>
+            <Meta
+                title="Elevate Your Identity"
+                description="Your One-Stop Solution for Incorporation, Legal Support, Digital Marketing, and Cutting-Edge App & Web Development Services."
+                image="/parasya/parasya.jpg"
+                url="https://parasya.in"
+            />
 
-            <ScrollSection direction="left">
-                <HomeAbout />
-            </ScrollSection>
+            <main>
+                <HeroSection />
 
-            <ScrollSection direction="right">
-                <HomeMission />
-            </ScrollSection>
+                <ScrollSection direction="up">
+                    <Carousel />
+                </ScrollSection>
 
-            <ScrollSection direction="zoom">
-                <Partner />
-            </ScrollSection>
+                <ScrollSection direction="left">
+                    <HomeAbout />
+                </ScrollSection>
 
-            <ScrollSection direction="up">
-                <ImageFlow />
-            </ScrollSection>
+                <ScrollSection direction="right">
+                    <HomeMission />
+                </ScrollSection>
 
-            <ScrollSection direction="fade" delay={0.2}>
-                <HomeBlogs />
-            </ScrollSection>
+                <ScrollSection direction="zoom">
+                    <Partner />
+                </ScrollSection>
 
-            <ScrollSection direction="up">
-                <HomeServices />
-            </ScrollSection>
+                <ScrollSection direction="up">
+                    <ImageFlow />
+                </ScrollSection>
 
-            <ScrollSection direction="zoom">
-                <Testimonials />
-            </ScrollSection>
+                <ScrollSection direction="fade" delay={0.2}>
+                    <HomeBlogs />
+                </ScrollSection>
 
-            <ScrollSection direction="up">
-                <LogoGrid />
-            </ScrollSection>
-        </main>
+                <ScrollSection direction="up">
+                    <HomeServices />
+                </ScrollSection>
+
+                <ScrollSection direction="zoom">
+                    <Testimonials />
+                </ScrollSection>
+
+                <ScrollSection direction="up">
+                    <LogoGrid />
+                </ScrollSection>
+            </main>
+        </>
     );
 }
