@@ -6,7 +6,6 @@ export const metadata = {
   description: "Parasya helps elevate your brand identity through innovative solutions.",
   keywords: "branding, design, marketing, Parasya",
   authors: [{ name: "Parasya" }],
-  viewport: "width=device-width, initial-scale=1",
   openGraph: {
     title: "Parasya - Elevating Your Identity",
     description: "Parasya helps elevate your brand identity through innovative solutions.",
@@ -30,6 +29,11 @@ export const metadata = {
     site: "@Parasya",
     creator: "@Parasya",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
