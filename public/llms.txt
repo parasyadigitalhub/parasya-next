@@ -1,0 +1,5 @@
+Allow: /
+
+Sitemap: https://parasya.in/sitemap.xml
+
+Contact: info@parasya.in
