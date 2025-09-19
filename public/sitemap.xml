@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://parasya.in/home</loc>
+    <loc>https://parasya.in</loc>
       <video:video>
         <video:thumbnail_loc>https://parasya.in/parasya/parasya.jpg</video:thumbnail_loc>
         <video:title>Parasya Motion - Elevating Your Identity</video:title>
