@@ -66,7 +66,7 @@ export default function Footer() {
                     {/* Divider */}
                     <div className={styles.footerDivider}>
                         <div className={styles.getInTouchWrapper}>
-                            <Link href="/contact" className={styles.getInTouch}>
+                            <Link href="/contacts" className={styles.getInTouch}>
                                 Get In Touch
                             </Link>
                         </div>
@@ -104,7 +104,7 @@ export default function Footer() {
                     </div>
 
                     <div className={styles.getInTouchWrapper}>
-                        <Link href="/contact" className={styles.getInTouch}>
+                        <Link href="/contacts" className={styles.getInTouch}>
                             Get In Touch
                         </Link>
                     </div>
