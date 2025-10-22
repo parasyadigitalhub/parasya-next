@@ -78,7 +78,7 @@ export default function HeroSection() {
                         <Image
                             src="/home/planet.svg"
                             alt="Floating planet"
-                            fill   
+                            fill
                             style={{ opacity: isLoading ? 0 : 0.4 }}
                             priority
                         />
@@ -98,8 +98,7 @@ export default function HeroSection() {
                 <h1>YOUR IDENTITY</h1>
                 {!isMobile && (
                     <p>
-                        Your One-Stop Solution for Incorporation, Legal Support, Digital
-                        Marketing, and Cutting-Edge App & Web Development Services.
+                        Elevate your business with expert in digital marketing, innovative branding, and custom Web & App development solutions from the best digital Marketing agency in Calicut, Kerala, driving growth across India,UAE,KSA,USA,Qatar,Germany and Canada.
                     </p>
                 )}
             </div>
