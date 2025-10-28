@@ -634,7 +634,7 @@ export const companies = [
         websiteUrl: '',
         brandingOverview: 'Honoring a loved one’s memory is important, but finding a reliable service to clean and care for gravestones can be difficult. Magnolia Touch makes this process easier and more respectful.',
         problemStatement: 'we built a brand that shows care, respect, and remembrance for loved ones.',
-        location: 'INDIA',
+        location: 'California, US',
         logicPoints: [
             {
                 title: 'Magnolia Flower Shape',

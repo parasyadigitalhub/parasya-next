@@ -28,6 +28,14 @@ export default function MobilePortfolio() {
     const groupedWebApps = groupApps(webApps);
     const categories = ["All", ...Object.keys(groupedWebApps).filter(c => c !== "All")];
 
+    const handleVisit = (url: string) => {
+        if (!url) return;
+        const fullUrl = url.startsWith("http://") || url.startsWith("https://")
+            ? url
+            : `https://${url}`;
+        window.open(fullUrl, "_blank");
+    };
+
     return (
         <div className={styles.flexContainer}>
             <div className={styles.navPills}>
@@ -60,7 +68,9 @@ export default function MobilePortfolio() {
                                 </div>
                                 <div className={styles.cardFooter}>
                                     <button onClick={() => setSelectedApp(app)}>Details</button>
-                                    {app.appUrl && <a href={app.appUrl} target="_blank">Visit</a>}
+                                    {app.appUrl && (
+                                        <button onClick={() => handleVisit(app.appUrl)}>Visit</button>
+                                    )}
                                 </div>
                             </div>
                         </div>
