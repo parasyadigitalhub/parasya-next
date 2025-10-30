@@ -7,13 +7,16 @@ import ImageFlow from "./home/imageflow/page";
 import LogoGrid from "./home/logogrid/page";
 import HomeMission from "./home/mission/page";
 import Partner from "./home/partner/page";
-import HeroSection from "./home/planet/page";
+// import HeroSection from "./home/planet/page";
 import Testimonials from "./home/testimonials/page";
+import Landing from "./home/landing/landing";
 
 export default function HomePage() {
     return (
         <main>
-            <HeroSection />
+            <Landing />
+
+            {/* <HeroSection /> */}
 
             <ScrollSection direction="up">
                 <Carousel />
